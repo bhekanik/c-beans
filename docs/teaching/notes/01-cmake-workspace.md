@@ -51,6 +51,18 @@ Anticipated based on the C anchor table:
 - **The configure-vs-build distinction.** `cmake -B build` vs `cmake --build build` are two separate steps. Why? Because CMake is a *generator* — it produces Makefiles (or Ninja files) that then run the actual compiler. This double-stepping is alien to npm-world (`npm run build` is one command). May warrant an extra verbal explanation.
 - **Out-of-source builds.** Why `build/` and not `dist/` or just compiling in place? The `-B` flag's significance. The chapter mentions it; live, may want to demo `rm -rf build` and rebuild to show how clean the source tree stays.
 
+## Refinement landed
+
+### 2026-05-04 — Checkpoint discipline added to "Try it yourself" + "Compiler conversation"
+
+**Surfaced by:** WS-1 live session, the learner.
+
+**Problem:** Both the "Try it yourself" exercise (build a second library, then delete it) and the "Compiler conversation" walkthrough (modify a line, see the error, restore) were structured as collapsed sequences — "do all of this then tell me." The cleanup / restore step destroys the evidence the agent needs to verify the prior stage actually worked. By the time the learner reports done, the second library is gone, the broken `add_subdirectory` line is restored, and the agent can only verify the *final* state — not the construction the lesson was actually about.
+
+**Fix:** split both sections into Stage A → checkpoint → Stage B, with explicit "tell me when you're at this point" pauses for the learner to verify with the LLM-as-teacher before tearing down or restoring.
+
+**Lifted to rule level:** propagated up to teaching skill rule 4 (gradual release / checkpoint discipline) and into chapter-template's "Try it yourself" + "Compiler conversation" sections. Future chapters with multi-stage exercises now have a template to follow. Recorded in `~/.dotfiles/.skills/teaching/SKILL.md` and `references/operating-rules.md` as originating from this session.
+
 ## Refinement ideas
 
 - [ ] **Add a sidebar on `compile_commands.json`** if the learner is using clangd / a C-aware editor and asks about completion. (Skip if they don't ask — staying focused.)

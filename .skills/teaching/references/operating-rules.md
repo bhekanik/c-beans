@@ -42,6 +42,34 @@ The rule is *new* concepts. Recapping or applying existing ones doesn't count. T
 
 Skip round 2 and the gradient breaks. The "we do" round is the bridge.
 
+### Checkpoint discipline for multi-stage "you do"
+
+Round 3 often has multiple verifiable states. Common shapes:
+
+- **Build then teardown** — "create a sibling library, build it to confirm, then delete it to restore the prior state."
+- **Modify then restore** — "remove the trait bound, watch the compiler error, restore."
+- **Add feature then add tests then refactor** — three distinct teaching targets.
+
+**Anti-pattern:** "Do all of this and tell me when you're done." The agent can only verify the final state. By then the intermediate states the agent needed to inspect have been destroyed by the cleanup/restore step. The agent ends up trusting the learner's word, asking them to redo it, or skipping verification — none of which are good.
+
+**Pattern:** structure as checkpoint pairs.
+
+> 🛠️ **Stage A:** \<construction task\>
+>
+> Run `<verify command>`. **Stop and tell me you're at this point** so we can verify together before you tear it down.
+
+Agent verifies stage A. Then:
+
+> 🛠️ **Stage B:** \<cleanup / next-state task\>
+>
+> Run `<verify command>` again. **Stop and tell me** so we can verify the cleanup state.
+
+Agent verifies stage B. Each stage with a distinct teaching target gets its own observable checkpoint.
+
+The cost is one extra round-trip per stage. The benefit is the verification chain doesn't get cut. For a single-state exercise (build a function, run a test, done) the discipline is unnecessary; for multi-state it's load-bearing.
+
+Originated from c-beans WS-1 session, 2026-05-04. The "Try it yourself" exercise had collapsed build + cleanup into one step; by the time the learner reported done, both states had been destroyed and the agent had no way to verify the build actually worked. Surface principle: don't ask learners to construct and dismantle in the same breath.
+
 ## 5. Learner drives on conceptual stakes
 
 Conceptual stakes:

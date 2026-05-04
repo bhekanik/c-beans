@@ -109,6 +109,8 @@ Pause and answer in your head before continuing. (For LLM mode: the agent will w
 
 ## Try it yourself
 
+### Single-stage shape (default)
+
 > 🛠️ **Your turn:** <task — concrete, single-step, builds on what was just shown>
 
 After you've written it, run:
@@ -127,11 +129,29 @@ If you got something different, common causes are:
 - (likely cause 1) — fix is `<fix>`
 - (likely cause 2) — fix is `<fix>`
 
+### Multi-stage shape (use when the exercise has cleanup, restore, or distinct verifiable states)
+
+Per rule 4's checkpoint discipline, multi-stage exercises must pause for verification *between* stages, never collapse into "do everything then tell me." The cleanup or restore step destroys the prior state's evidence; without a checkpoint the agent can't verify the build worked.
+
+> 🛠️ **Your turn — Stage A (build):** <construction task>
+>
+> Run `<verify command>` and confirm `<expected outcome>`. **Stop here and tell me you're at this point** so we can verify the build state together before you tear it down.
+
+(Agent verifies stage A.)
+
+> 🛠️ **Your turn — Stage B (cleanup / next state):** <cleanup or transition task>
+>
+> Run `<verify command>` again. **Stop and tell me** so we can verify the cleanup state.
+
+(Agent verifies stage B.)
+
+The same shape applies to *modify-then-restore* sequences (compiler-conversation pattern), *add-then-test-then-refactor* sequences, and any other "you do" with multiple verifiable states. **Each state with a distinct teaching target gets its own observable checkpoint.**
+
 ---
 
 ## Compiler conversation
 
-(Where applicable: a deliberate-error walkthrough. Have the reader remove a keyword, run the build, read the compiler's response together, then restore.)
+(Where applicable: a deliberate-error walkthrough. Have the reader remove a keyword, run the build, read the compiler's response together, **stop for the agent to verify the error landed**, then restore. The mid-pause is non-negotiable — once the file is restored, the error message is gone and the agent can't verify the learner saw the right error. Use the multi-stage shape from "Try it yourself" above.)
 
 ---
 

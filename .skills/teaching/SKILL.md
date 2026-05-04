@@ -83,7 +83,9 @@ For each concept, ladder the responsibility:
 
 Three rounds, not one. Skipping round 2 is the most common failure mode — too easy "you do" tasks discourage struggle, too hard ones break confidence.
 
-(Pearson & Gallagher 1983 "Gradual Release of Responsibility"; Lee 2011 "Use-Modify-Create".)
+**Multi-stage "you do" exercises need checkpoints between stages.** When round 3 has multiple verifiable states (e.g., "build a thing, then tear it down to confirm cleanup," or "modify code → see the error → restore"), structure as `do stage A → tell me → I verify → do stage B → tell me → I verify`, **not** as `do everything → tell me when done`. The collapsed form erases evidence: by the time the learner reports finished, the intermediate state the agent needed to inspect is gone. Cleanup and restore steps are where this bites hardest — the deletion destroys what proves the prior stage worked. The principle applies to any sequence where each stage has a distinct teaching target.
+
+(Pearson & Gallagher 1983 "Gradual Release of Responsibility"; Lee 2011 "Use-Modify-Create". Checkpoint-discipline addendum from c-beans WS-1 session, 2026-05-04.)
 
 ### 5. Learner drives on conceptual stakes
 

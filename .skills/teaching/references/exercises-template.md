@@ -196,6 +196,7 @@ This is a written exercise — answer in 200–400 words. No code expected. The 
 - **Tests deterministic where possible.** Behavioural through the contract by default. When the implementation IS the lesson (e.g., "use `AtomicI64`, not `Mutex<i64>`"), test the implementation explicitly **and label this** in the prose so the learner knows their freedom is bounded and why.
 - **Hints stay non-spoiling.** A good hint says "look at section X of the chapter" or "consider what happens when the input is empty." It does not give the answer.
 - **Cross-language exercises specify setup.** Don't assume the reader has a C toolchain or a Python interpreter ready — give the one-line setup command.
+- **Multi-stage exercises follow rule 4's checkpoint discipline.** When an exercise has setup + work + teardown (or any sequence with multiple verifiable states), structure as `do stage A → tell me → I verify → do stage B → tell me → I verify`. Don't collapse cleanup into the same step as the build. The cleanup destroys evidence the agent needs. See chapter-template's "Try it yourself" multi-stage shape.
 
 ## Anti-patterns
 

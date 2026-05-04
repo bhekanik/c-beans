@@ -403,15 +403,21 @@ You've shipped chapter 01's artifact. There's no `./build/something` to run beca
 
 ## Try it yourself
 
-> 🛠️ **Your turn:** Add a second library, `beans_string`, that has the same shape as `beans_core` (its own subdirectory, its own `CMakeLists.txt`, an empty `.c` file, an `add_library(... STATIC ...)` declaration with the same `target_include_directories` line). Don't write any code in it. Just the manifest and an empty `.c` file.
+This is a **two-stage exercise**: you'll build a second library, then tear it down to restore the prior state. Per the teaching skill's checkpoint discipline (rule 4), the cleanup step destroys the evidence that the build worked, so we pause for verification *between* stages — not at the end.
+
+If you're working through this with an LLM-as-teacher: complete stage A, tell them you're at the checkpoint so they can verify the build, **then** do stage B. Don't collapse them into one report.
+
+### Stage A — build a second library
+
+> 🛠️ **Your turn — Stage A:** Add a second library, `beans_string`, that has the same shape as `beans_core`. Build both, then **stop**.
 
 Steps:
 
-1. `mkdir -p src/string_` (the trailing underscore is intentional — `string` collides with C standard library name; we'll use this naming convention for any module whose name shadows a standard one).
+1. `mkdir -p src/string_` (the trailing underscore is intentional — `string` collides with the C standard library name; we'll use this convention for any module whose name shadows a standard one).
 2. Create `src/string_/empty.c` as an empty file.
 3. Create `src/string_/CMakeLists.txt` matching the shape of `src/core/CMakeLists.txt`, but with `beans_string` as the library name.
 4. Add `add_subdirectory(src/string_)` to the root `CMakeLists.txt`.
-5. Run `cmake -B build && cmake --build build`.
+5. Run `rm -rf build && cmake -B build && cmake --build build`.
 
 Expected output:
 
@@ -434,22 +440,21 @@ If you got something different, common causes:
 - "add_subdirectory given source ... not an existing directory": typo in the path or you forgot to `mkdir`.
 - The root `CMakeLists.txt` has the wrong path on the `add_subdirectory` line.
 
-When you've confirmed it builds, **delete the string_ directory and remove its `add_subdirectory` line**. You don't need it yet. The exercise was the build, not the artifact. The real `beans_string` library lands in chapter 05, properly motivated.
+> **Checkpoint:** stop here. Confirm both `build/src/core/libbeans_core.a` and `build/src/string_/libbeans_string.a` exist (run `ls build/src/*/lib*.a`). If you're working with an LLM-as-teacher, this is where you tell them — they need to verify the two-library build before you tear it down.
 
-```bash
-rm -rf src/string_
-# Then edit CMakeLists.txt and remove the `add_subdirectory(src/string_)` line.
-```
+### Stage B — tear it down
 
-Confirm the project still builds with just `beans_core`:
+> 🛠️ **Your turn — Stage B:** Remove the second library. The exercise was the build, not the artifact. The real `beans_string` library lands in chapter 05, properly motivated.
 
-```bash
-rm -rf build
-cmake -B build
-cmake --build build
-```
+Steps:
 
-The build should produce just `beans_core` as before.
+1. `rm -rf src/string_`
+2. Edit the root `CMakeLists.txt` and remove the `add_subdirectory(src/string_)` line.
+3. Re-run `rm -rf build && cmake -B build && cmake --build build`.
+
+Expected output is the original single-library build (no `beans_string` lines).
+
+> **Checkpoint:** confirm `build/src/string_` doesn't exist and only `libbeans_core.a` is produced. If you're working with an LLM-as-teacher, tell them you're at the cleanup checkpoint so they can verify the prior state was restored.
 
 ---
 
@@ -493,7 +498,9 @@ What this tells you:
 2. The error message tells you the exact line (`CMakeLists.txt:8`) and the exact missing path. This is good error reporting.
 3. Compiler detection still ran first. CMake doesn't bail at the first sign of trouble; it gathers configure-time information and then reports all the issues.
 
-Restore the line to `add_subdirectory(src/core)` and re-configure to confirm everything works again.
+> **Checkpoint:** stop here, with the broken state still in place. If you're working with an LLM-as-teacher, this is where you tell them you've reproduced the error. They need to see the broken state matches expectations *before* you restore it — once `src/core` is back in `CMakeLists.txt`, the error message is gone and there's nothing to verify against.
+
+After verification: restore the line to `add_subdirectory(src/core)` and re-configure to confirm everything works again.
 
 ---
 
