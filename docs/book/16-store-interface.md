@@ -7,6 +7,8 @@ estimated_time_minutes: 75
 artifact: A `Store` struct + `StoreVTable` with `add`/`list`/`complete`/`delete` function pointers compiles; an empty `null_store` implementation satisfies the interface
 status: stub
 related_milestone: docs/implementation/tasks/M07-store.md
+teaches:
+  - polymorphism-in-c
 ---
 
 # Chapter 16 — The Store interface

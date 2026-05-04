@@ -7,6 +7,10 @@ estimated_time_minutes: 75
 artifact: sqlite3 is built via CMake `FetchContent` (amalgamation distribution); a `beans-sqlite` smoke binary opens a database, creates a `tasks` table, runs `SELECT 1`
 status: stub
 related_milestone: docs/implementation/tasks/M14-sqlite.md
+teaches:
+  - embedded-databases
+requires:
+  - polymorphism-in-c
 ---
 
 # Chapter 34 — Embedding sqlite

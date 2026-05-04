@@ -7,6 +7,8 @@ estimated_time_minutes: 90
 artifact: `ctest --test-dir build --output-on-failure` runs all chapter 04-19 smoke tests; they pass
 status: stub
 related_milestone: docs/implementation/tasks/M07b-test-harness.md
+teaches:
+  - testing-in-c
 ---
 
 # Chapter 20 — Testing as a discipline

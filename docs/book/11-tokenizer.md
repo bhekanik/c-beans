@@ -7,6 +7,8 @@ estimated_time_minutes: 90
 artifact: A tokenizer turns `{"a": 1, "b": [true, null]}` into a stream of typed tokens with line and column positions
 status: stub
 related_milestone: docs/implementation/tasks/M05-tokenizer.md
+teaches:
+  - hand-rolled-parsing
 ---
 
 # Chapter 11 — The tokenizer

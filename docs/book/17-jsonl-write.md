@@ -7,6 +7,10 @@ estimated_time_minutes: 60
 artifact: `beans add "feed the cat"` opens the JSONL file in `O_APPEND`, serialises the task, writes one line; the file persists across runs
 status: stub
 related_milestone: docs/implementation/tasks/M07-store.md
+teaches:
+  - file-persistence
+requires:
+  - polymorphism-in-c
 ---
 
 # Chapter 17 — JSONL write

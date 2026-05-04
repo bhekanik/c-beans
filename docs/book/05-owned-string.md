@@ -7,6 +7,8 @@ estimated_time_minutes: 90
 artifact: A `String` struct (data + len + cap) round-trips through alloc + append + free with no leaks under ASan
 status: stub
 related_milestone: docs/implementation/tasks/M01-owned-string.md
+teaches:
+  - manual-memory
 ---
 
 # Chapter 05 — Owned String

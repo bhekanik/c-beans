@@ -7,6 +7,11 @@ estimated_time_minutes: 90
 artifact: `beans-daemon` owns the Store; `beans add` connects to the daemon and sends a Request; auto-spawn dance (probe socket → fork+exec → wait for socket) works
 status: stub
 related_milestone: docs/implementation/tasks/M15-daemon-tcp.md
+teaches:
+  - daemon-architecture
+requires:
+  - network-programming
+  - file-persistence
 ---
 
 # Chapter 42 — Daemon extraction

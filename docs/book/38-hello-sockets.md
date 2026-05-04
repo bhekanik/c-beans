@@ -7,6 +7,8 @@ estimated_time_minutes: 75
 artifact: A server prints whatever a client sends; the client sends a hardcoded string; both close cleanly
 status: stub
 related_milestone: docs/implementation/tasks/M15-daemon-tcp.md
+teaches:
+  - network-programming
 ---
 
 # Chapter 38 — Hello, sockets

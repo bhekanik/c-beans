@@ -7,6 +7,10 @@ estimated_time_minutes: 60
 artifact: `beans` invoked with no args launches the TUI; it shows "hello, beans" centred, waits for a keypress, then restores the terminal cleanly
 status: stub
 related_milestone: docs/implementation/tasks/M10-hello-ncurses.md
+teaches:
+  - tui-with-ncurses
+requires:
+  - file-persistence
 ---
 
 # Chapter 24 — Hello, ncurses
