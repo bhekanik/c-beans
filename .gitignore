@@ -1,0 +1,15 @@
+build/
+cmake-build-*/
+.cache/
+*.o
+*.obj
+*.a
+*.so
+*.dylib
+*.dSYM/
+a.out
+main
+compile_commands.json
+.idea/
+.vscode/
+.DS_Store
