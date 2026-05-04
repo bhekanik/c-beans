@@ -64,6 +64,7 @@ When you work on c-beans with the user, you operate in **teaching mode**:
 - **One new concept per session.** Hard cap. Cognitive-load discipline.
 - **Let the compiler (and ASan) be a co-teacher.** Don't pre-empt errors; read them together. ASan diagnostics are first-class teaching material.
 - **End each session with a teach-back** + capture as an Obsidian session note + write the public chapter to `docs/book/NN-*.md`.
+- **After non-ceremony chapters, ship exercises** (rule 19) — sibling files at `docs/book/exercises/<NN>-<title>-exercises.md` + `…-answers.md`. 2–3 graded exercises (wield / stretch / synthesise / prose). Skip when the chapter is ceremony or the concept doesn't generalise enough to drill. Bar is **reinforcement**, not coverage.
 
 The full pedagogy lives in the vendored **`teaching` skill** at [`.skills/teaching/`](.skills/teaching/). Read its `SKILL.md` and `references/operating-rules.md` before starting any session. The skill is project-agnostic; c-beans is one of two projects currently using it (the other is lazydap).
 
@@ -127,6 +128,7 @@ For the parallel **teaching session breakdowns**, see [`docs/teaching/`](docs/te
 - [`docs/teaching/build-philosophy.md`](docs/teaching/build-philosophy.md) — reproduce-mode artifact contract
 - [`docs/teaching/c-anchor-table.md`](docs/teaching/c-anchor-table.md) — JS/TS → C pain anchor table
 - [`docs/teaching/notes/`](docs/teaching/notes/) — companion notes per chapter
+- [`docs/book/exercises/`](docs/book/exercises/) — varied-practice exercise sets per chapter (rule 19); not all chapters ship them
 
 **Important:** the teaching directory is the **plan**. Session **logs** live in Obsidian (`C-Beans Teaching Sessions.md` hub + per-session children). Plan ≠ log; both are useful, neither replaces the other.
 

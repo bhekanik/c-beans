@@ -58,6 +58,19 @@ Anticipated based on the C anchor table:
 - [ ] **If the learner has used Cargo:** explicitly compare `[workspace]` + `add_subdirectory()`. Lazydap's chapter 01 is the Rust counterpart; offer to read it side-by-side after the teach-back.
 - [ ] **Watch for the "but my IDE handles this" reflex.** Some IDEs (CLion, VS Code with a CMake extension) hide the configure step. Make sure the learner runs `cmake -B build` from the terminal at least once so they understand the seams.
 
+## Exercises authoring notes
+
+Per rule 19. **This chapter ships zero exercises.**
+
+**Why:** ceremony chapter. The single "you do" task (add a second library, then remove it) lives inline as round 3 of gradual release per rule 4. Any far-transfer exercise would either:
+
+- Rewrite the chapter's example with surface-level renaming (zero transfer) — anti-pattern.
+- Reach for territory the chapter doesn't cover (e.g., a binary target, `find_package`, install rules) — violates rule 3 by smuggling in a new concept.
+
+The bar is *reinforcement*, not coverage. Empty is the right state.
+
+**When the chapter would earn exercises:** if a future revision of chapter 03 (conventions as code) splits and pushes some CMake content here — e.g., header-only library targets, INTERFACE libraries, or `target_compile_features` — the surface broadens enough to drill. Revisit then.
+
 ## Notes for future sessions on this chapter
 
 (Empty — first teach hasn't run yet.)

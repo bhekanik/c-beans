@@ -170,6 +170,21 @@ Before moving on, answer these in your own words. If you can't, re-read the rele
 
 ---
 
+## Exercises
+
+> Per rule 19. Skip this section only if the chapter is ceremony with nothing to reinforce.
+
+See [`exercises/<NN>-<title>-exercises.md`](exercises/<NN>-<title>-exercises.md) for the full set; quick preview:
+
+- 🛠️ **Wield:** <one-line description of the near-context exercise>
+- 🚀 **Stretch:** <one-line description of the cross-domain exercise>
+- 🔀 **Synthesise:** <one-line description combining a prior chapter's concept>
+- ✍️ **Prose:** <one-line question for the decision-flavoured exercise>
+
+Pick one or all; live in-session if your agent is running you through this chapter, async otherwise. Reference solutions and commentary at [`exercises/<NN>-<title>-answers.md`](exercises/<NN>-<title>-answers.md) — peek only after you've taken your own swing.
+
+---
+
 ## See also
 
 - ← [Chapter NN-1: <previous title>](NN-1-name.md)

@@ -41,7 +41,7 @@ The user has signalled a teaching session. They've consented to a slower pace. T
 
 This is incompatible with "let's go fast" mode. If the user signals they want speed instead, hand the wheel back, suggest they switch to default mode, and stop teaching.
 
-## The eighteen operating rules
+## The nineteen operating rules
 
 These are paid-for-in-pain rules from pedagogy research and senior-engineer learning experience. Don't deviate without explicit user direction.
 
@@ -248,6 +248,42 @@ Every chapter ships with a git tag named `chapter-NN` and a corresponding GitHub
 **Workspace-setup wart**: early ceremony sessions sometimes get folded into a single workspace-setup commit, so chapters 01-03 (or wherever ceremony lives) may not have individual tags. Document this in the project's `CONTRIBUTING.md`. Going forward each session ships in its own commit so this doesn't recur.
 
 Originated from the lazydap repo (2026-05-03). The repo's `CONTRIBUTING.md` "Chapter tags and releases" section has the full convention and the release workflow under `.github/workflows/release.yml` is the reference implementation. The bookgen skill scaffolds this for every generated book.
+
+### 19. Varied practice for transfer — exercises after the chapter
+
+Rule 4's "you do" verifies the learner can wield a concept in *one* context — the chapter's. Whether they can wield it elsewhere is a separate question. **Exercises answer it.**
+
+Concepts transfer only when practiced across *varied surface features* (Bransford & Schwartz 1999 on transfer of learning; Bjork on varied / interleaved practice). The math-textbook exercise set you remember from school is exactly this: drill the same concept across structurally different problems until the deep structure stabilises across surface variation. Rule 4's "you do" verifies *near transfer* (one analogous task in the same codebase, with the chapter's context warm in the learner's head). Rule 19's exercises verify *far transfer* (varied context, different surface). Both are needed for the schema to stabilise.
+
+**Storage**: sibling files at `docs/book/exercises/<NN>-<title>-exercises.md` (prompts) and `docs/book/exercises/<NN>-<title>-answers.md` (reference solutions + commentary). Sibling-file structure rather than appending to the chapter: keeps the chapter narrative scannable, lets exercise sets grow over time without bloat, and gives natural spoiler protection by filename.
+
+**Grades** — pick what reinforces, never fill quota:
+
+| Grade | What it is | When to use |
+|---|---|---|
+| **Wield** | Near-context variation. Same shape as the chapter's example, different surface. | Default; confirms the learner can apply without the chapter's scaffolding warm. |
+| **Stretch** | Different domain — different protocol, different data shape, sometimes a different language entirely (e.g., atomics in C to feel the pain Rust's `AtomicI64` solves). | Surfaces deep structure beneath unfamiliar specifics. Highest-yield when the concept transfers across languages. |
+| **Synthesise** | Combine with a prior chapter's concept. | Builds the schema that connects concepts, not isolated knowledge. |
+| **Prose** | Text-only. Learner answers in writing — design choices, architectural trade-offs, "why X over Y." | Concept is decision-flavoured rather than codable. |
+
+A typical chapter ships **2–3 exercises** drawn from the grades above. **Don't ship exercises for the sake of exercises.** Ceremony chapters with nothing to reinforce ship zero. Decision-flavoured chapters may ship prose-only. The bar is *reinforcement*, not coverage. If you're forcing an exercise into existence to fill the section, drop it.
+
+**Constraints:**
+
+- **Only concepts already covered.** Rule 3 still caps new concepts at one per chapter; exercises don't get to smuggle a second one in.
+- **Each exercise specifies:** problem statement, signature contract (the surface the learner's solution must satisfy), test command, and which sticky-point it targets per the teaching-notes companion. Sticky-points-aware exercises are far higher-yield than generic drill.
+- **Tests deterministic where possible.** Behaviour-through-the-contract by default — the Implementation Swap Test from the project's `tdd` skill applies, preserving creative latitude in how the learner solves the problem. **Exception:** when *the implementation* IS the lesson (e.g., "use `AtomicI64`, not `Mutex<i64>`"), test the implementation directly *and label this as a deliberate exception* in the exercise prose, so the learner knows when their freedom is bounded and why.
+- **Run-before-publish discipline (rule 16) applies.** Answer-key code must run; tests must pass against the answer key before exercises are published.
+
+**Modes:**
+
+- **Solo reader** — exercises are their teach-back substitute. They write code, run the test, see green. Stuck? Hint section in the exercise file first; answer key as last resort.
+- **LLM-as-teacher** — agent grades the learner's solution against the deterministic test, surfaces patterns. New diagnostic data lands in the teaching-notes companion (which exercises reveal which gaps; which proved high-yield over time).
+- **Live in-session** — optional, learner-driven. When the learner picks an exercise mid-session, the agent authors / grades / surfaces gaps in real time. Default is async between-session work; live mode is the *high-feedback* path the learner can opt into.
+
+**Why this is rule-level, not project-level convention:** like rule 18 (chapter tags), this generalises across every learn-by-LLM book the bookgen skill produces. Without varied practice, books risk teaching surface-level recognition without transfer; with it, the exercise set becomes the bridge from "understood the chapter" to "wields the concept."
+
+Originated from the lazydap M3-1 session (2026-05-04). The skill's `migrations/019-varied-practice-for-transfer.md` (when the migration mechanism lands in a follow-up session) handles backfill for repos that adopted teaching mode before this rule existed.
 
 ## Note capture — using the obsidian skill
 

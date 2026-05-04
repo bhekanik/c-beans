@@ -537,6 +537,14 @@ Before moving on, answer these in your own words. If you can't, re-read the rele
 
 ---
 
+## Exercises
+
+> Per rule 19. **None ship for this chapter** — it's ceremony, and the only thing to drill (add a second library) is already round 3 of the gradual release in "Try it yourself" above. Adding a separate sibling exercise set would just rewrite the chapter's example. The bar is reinforcement, not coverage; this chapter doesn't earn one.
+
+The first chapter that ships exercises is chapter 04 ([`First segfault`](04-first-segfault.md)) — that one has real transfer territory (UB as a category, ASan diagnostics, varied dangling-pointer shapes).
+
+---
+
 ## Pain anchors covered
 
 | New construct | The pain it solves | In which language |

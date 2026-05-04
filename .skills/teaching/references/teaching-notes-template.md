@@ -54,6 +54,26 @@ For each predict-pause in the chapter, what real learners answer wrong, why they
 
 (Per session: did the learner end the session with the runnable artifact working? If no, what blocked? Rule 13 violation, or environment issue, or genuine learning gap?)
 
+## Exercises authoring notes
+
+(Per rule 19. Notes for the *teacher* about the chapter's exercise set — what each exercise targets, how learners interact with them, which prove high-yield over time.)
+
+| Exercise | Grade | Sticky-point targeted | Yield observed |
+|---|---|---|---|
+| 1 | wield | <which sticky-point from above> | <high / medium / low / not-yet-data> + brief note |
+| 2 | stretch | <which sticky-point> | <yield observation> |
+| ... | ... | ... | ... |
+
+**Authoring decisions:**
+- Why these exercises were chosen (vs others considered)
+- Any contract / test trade-offs made (e.g., "exercise 2 tests implementation directly because the implementation IS the lesson")
+- Cross-language exercises: setup notes that aren't obvious from the exercise file
+
+**Learner-data feedback to the chapter:**
+- Patterns multiple learners hit when failing an exercise (lift to the answer key's "common wrong attempts" once 2+ data points)
+- Exercises that turn out to be too easy / too hard — refinement candidates
+- Exercises that turn out to drill the *wrong* sticky-point — refactor or replace
+
 ## Reuse log
 
 (When this chapter has been used to teach this concept *outside* the project's main session sequence — e.g., a refresher for a returning learner — note it. Helps spot when the chapter has earned promotion to a "stable" status vs needing more refinement.)

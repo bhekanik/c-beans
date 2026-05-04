@@ -99,9 +99,14 @@ A multi-session walk through learning C while building a real terminal task mana
 | 42 | [Daemon extraction](42-daemon-extraction.md) | Auto-spawn, probe-fork-wait | CLI as thin client | stub |
 | 43 | [TUI as thin client](43-tui-thin-client.md) | Pub/sub events | TUI updates from CLI in another shell | stub |
 
+## Exercises
+
+Chapters that earn an exercise set ship sibling files at [`exercises/<NN>-<title>-exercises.md`](exercises/) + `…-answers.md`. Per **rule 19** of the [`teaching` skill](../../.skills/teaching/SKILL.md). Ceremony chapters often ship none — see [`exercises/README.md`](exercises/README.md) for the convention.
+
 ## See also
 
 - [`/AGENTS.md`](../../AGENTS.md) — pedagogy, learner profile, agent startup
 - [`/docs/teaching/sessions.md`](../teaching/sessions.md) — session plan with concept + artifact per row
 - [`/docs/blueprint/00-overview.md`](../blueprint/00-overview.md) — full project vision
+- [`exercises/README.md`](exercises/README.md) — varied-practice exercise sets per chapter
 - Sister book: [lazydap](https://github.com/planetaryescape/lazydap) — Rust solutions to the C pains taught here

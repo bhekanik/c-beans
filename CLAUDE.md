@@ -40,10 +40,11 @@ If you're documenting (writing chapters, fixing chapter bugs), apply the **human
 
 ## Specific Claude Code conventions
 
-- **No emojis in code or chapters unless the user asks.** The chapter template uses `🤔`, `🔮`, `📣`, `🛠️` as discrete predict/teach-back markers — those are part of the curriculum format, not decoration.
+- **No emojis in code or chapters unless the user asks.** The chapter template uses `🤔`, `🔮`, `📣`, `🛠️`, `🚀`, `🔀`, `✍️` as discrete predict/teach-back/exercise markers — those are part of the curriculum format, not decoration.
 - **Match the lazydap chapter format exactly.** The shape is paid for in pain. New chapters look like the lazydap chapters look. Diverging "to improve" almost always degrades.
 - **Prefer surgical edits to rewrites.** Use `Edit` for known-shape changes; reserve `Write` for new files or full rewrites.
-- **Use `TaskCreate` / `TaskUpdate` for multi-step session work.** Especially during chapter-write sessions where you're: writing chapter prose, writing teaching-notes, writing example code, running verification, capturing output, committing, tagging.
+- **Use `TaskCreate` / `TaskUpdate` for multi-step session work.** Especially during chapter-write sessions where you're: writing chapter prose, writing teaching-notes, writing example code, running verification, capturing output, writing exercises (rule 19) + answer key, committing, tagging.
+- **Exercises are sibling files, never inline.** `docs/book/exercises/<NN>-<title>-exercises.md` + `…-answers.md`. Chapter narrative gets a "preview" linking to them (per the chapter-template "Exercises" section). Skip exercises for ceremony chapters; ship 2–3 graded exercises elsewhere when there's transfer to drill.
 
 ## Sanitizer flags (for chapter-level CMake examples)
 
@@ -58,3 +59,4 @@ For Linux CI, ASan + UBSan run cleanly. On macOS, leak detection requires `Mallo
 - [`.skills/humanizer/SKILL.md`](.skills/humanizer/SKILL.md) — chapter prose rules
 - [`docs/teaching/sessions.md`](docs/teaching/sessions.md) — session plan
 - [`docs/teaching/c-anchor-table.md`](docs/teaching/c-anchor-table.md) — JS → C pain anchors
+- [`docs/book/exercises/`](docs/book/exercises/) — varied-practice exercise sets per chapter (rule 19)
