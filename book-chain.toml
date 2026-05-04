@@ -1,0 +1,35 @@
+# Chain registry for c-beans.
+chain = "bhekanik"
+description = """
+c-beans → lazydap.
+
+c-beans teaches CS foundations through C (memory, parsers, sockets, databases,
+TUI). Each pain it surfaces is the pain Rust solves; lazydap (Rust) is the
+companion book where those Rust solutions get built.
+"""
+
+# Anchor codebase for drift detection. c-beans IS its own anchor — the book is
+# reproduce-mode (built chapter by chapter), so the codebase grows alongside the chapters.
+anchor_repo = "."
+
+# Concepts c-beans teaches that other books can reference. Update as chapters land.
+[teaches]
+"manual-memory"        = "Phase A — owned strings, dynamic arrays, tagged unions, ASan as co-teacher"
+"hand-rolled-parsing"  = "Phase B — JSON tokenizer + recursive-descent parser from zero"
+"file-persistence"     = "Phase C — JSONL store, atomic write-via-rename"
+"polymorphism-in-c"    = "Phase C — Store interface via function-pointer vtable"
+"testing-in-c"         = "Phase D — assert harness then Unity"
+"tui-with-ncurses"     = "Phase E — model/update/view in C, ncurses primitives"
+"embedded-databases"   = "Phase G — SQLite as a library, prepared statements, transactions"
+"network-programming"  = "Phase H — BSD sockets, TCP framing, multi-client poll loop"
+"daemon-architecture"  = "Phase H — daemon + thin clients, pub/sub events"
+
+[[siblings]]
+name = "c-beans"
+path = "."
+description = "Terminal task manager in C — memory primitives, hand-rolled JSON parser, JSONL→SQLite, ncurses TUI, daemon over TCP"
+
+[[siblings]]
+name = "lazydap"
+path = "../../planetaryescape/lazydap"
+description = "Terminal-first DAP debugger in Rust — uses C pain anchors taught here. The Rust solutions to the C problems."

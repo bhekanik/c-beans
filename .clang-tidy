@@ -1,0 +1,29 @@
+---
+Checks: >
+  bugprone-*,
+  cert-*,
+  clang-analyzer-*,
+  misc-*,
+  performance-*,
+  portability-*,
+  readability-*,
+  -bugprone-easily-swappable-parameters,
+  -readability-magic-numbers,
+  -readability-identifier-length,
+  -misc-no-recursion
+
+WarningsAsErrors: 'bugprone-*,cert-*,clang-analyzer-*'
+
+HeaderFilterRegex: '^(src|include)/.*'
+
+FormatStyle: file
+
+CheckOptions:
+  - key: readability-function-cognitive-complexity.Threshold
+    value: 30
+  - key: readability-identifier-naming.FunctionCase
+    value: lower_case
+  - key: readability-identifier-naming.StructCase
+    value: CamelCase
+  - key: readability-identifier-naming.EnumCase
+    value: CamelCase

@@ -1,0 +1,14 @@
+Vendored: 2026-05-04T00:00:00Z
+Mode: reproduce
+Target language: c
+Anchor repo: . (this repo, built from zero chapter by chapter)
+
+Source skill versions:
+  teaching:  snapshot (from /Users/bhekanik/.claude/skills/teaching)
+  humanizer: snapshot (from /Users/bhekanik/.claude/skills/humanizer)
+
+To refresh: re-vendor with `cp -r ~/.claude/skills/{teaching,humanizer} .skills/`
+and bump the date above.
+
+The vendored skills make this repo self-contained — anyone forking this book can
+use it without first installing the original learner's dotfiles.
