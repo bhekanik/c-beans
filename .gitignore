@@ -32,3 +32,5 @@ Testing/
 
 tasks.jsonl
 *.tasks.jsonl
+
+.bookgen/last-anchor-sha
