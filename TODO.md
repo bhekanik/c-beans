@@ -4,7 +4,19 @@ The lightweight index. Real per-milestone content lives in `docs/implementation/
 
 ## Current teaching session
 
-**Next session: `WS-1` — CMake workspace structure. [Read the plan](docs/teaching/sessions.md#phase-0--workspace-setup--3-sessions). [Read the chapter](docs/book/01-cmake-workspace.md).**
+**Resume: `WS-1` (paused 2026-05-04, mid-session) — CMake workspace structure.**
+
+Covered last time: predict-pauses Q1–Q4, root + src/core CMakeLists walkthrough, "Try it yourself" Stage A (build second library) + Stage B (teardown). Both `libbeans_core.a` and `libbeans_string.a` built and verified; clean state restored.
+
+**Pending in WS-1:**
+- Compiler-conversation walkthrough (deliberate error: edit `add_subdirectory` to point at `src/nonexistent`, read CMake error, restore — checkpoint pause before restoring per rule 4)
+- "What you can run now" demo
+- Teach-back questions Q1–Q4 (chapter)
+- Chapter 01 artifact code commit (CMakeLists.txt + src/core/) and tag `chapter-02` per rule 18
+
+Resume entry point: ask the learner the compiler-conversation predict ("what shape of error message do you expect from a missing `add_subdirectory` target?"), then have them edit the line and run.
+
+[Read the plan](docs/teaching/sessions.md#phase-0--workspace-setup--3-sessions). [Read the chapter](docs/book/01-cmake-workspace.md). [Read the teaching notes — `sessions_run` field has the pause state](docs/teaching/notes/01-cmake-workspace.md).
 
 Before starting: greet the user, confirm we're in teaching mode, follow the AGENTS.md "fresh session" checklist (steps 1-10).
 

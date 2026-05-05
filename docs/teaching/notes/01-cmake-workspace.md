@@ -2,7 +2,14 @@
 chapter: 1
 session_id: WS-1
 title: CMake workspace
-sessions_run: []
+sessions_run:
+  - date: 2026-05-04
+    status: paused-mid-session
+    resumed: false
+    coverage:
+      done: [predict-Q1-JS-analogy, predict-Q2-min-CMake-categories, predict-Q3-missing-subdir-error, predict-Q4-empty-file-build, walkthrough-root-CMakeLists, walkthrough-src-core-CMakeLists, try-it-yourself-stage-A-build, try-it-yourself-stage-B-cleanup]
+      pending: [compiler-conversation-deliberate-error, what-you-can-run-now-demo, teach-back-Q1-Q4, artifact-commit-and-tag]
+    resume_at: "Compiler conversation: learner edits add_subdirectory to src/nonexistent, runs cmake -B build, reads error, stops at broken-state checkpoint for verification before restoring."
 ---
 
 # Teaching notes — Chapter 01: CMake workspace
@@ -33,7 +40,17 @@ The chapter teaches CMake workspace structure for a multi-module C project:
 
 ## What surprised the learner
 
-(To be filled after the first live teach.)
+### 2026-05-04 (session 1, paused mid-session)
+
+- **The "empty .c → no output" prediction.** Learner predicted Q4b ("`cmake --build build` will print nothing since the file is empty"). Actual: three stages of work print regardless — compile to `.o`, archive to `.a`, ranlib symbol-index pass. Plus the doubled `ranlib: warning: ... has no symbols` quirk on macOS. The model bug was conflating "empty source" with "no work to do." The build tool's choreography runs whether or not there are symbols to dance with. Learner caught the lesson cleanly once we ran it. *(This was anticipated in the wrong-predictions table; confirmed in live data.)*
+- **The `add_subdirectory` two-arg form.** Learner attempted Stage A while the agent was off updating skill rules; produced `add_subdirectory(src/core src/string_)` (treating it as "include both"). Actual semantics: `add_subdirectory(<source-dir> [<binary-dir>])`. The misuse caused a "weird success" — `src/core` was processed but its build output landed under `build/src/string_/`, while `src/string_/CMakeLists.txt` was never read. Surfaced post-fact via the leftover `build/src/string_/libbeans_core.a` after the user fixed the line. Worth flagging in the chapter as a teach-able failure mode.
+- **Build dir state survives schema changes.** Concrete consequence of the above: after fixing `add_subdirectory`, an incremental rebuild (no `rm -rf build`) left the misplaced `libbeans_core.a` artifact behind. Surfaced the "out-of-source build is your reset" lesson live. Worth promoting from sidebar to inline note in Step 4 of the chapter.
+
+## Sticky points (concepts that needed a second pass)
+
+### 2026-05-04
+
+- **The two-phase CMake build (configure vs build).** Learner's Q3 wrong prediction was "fail at build time" (model: one-phase tool that discovers things on the way). Calibration via the live `cmake -B build` error landed the configure/build distinction; the JS-world analog (no clean two-phase model in tsc/webpack; closest is Bazel) helped frame why this is alien. Worth retaining the calibration story in the chapter.
 
 Anticipated surprises based on the learner's profile (8yr JS/TS, current Rust learner, has felt some C pain on the pre-bookgen-archive parser):
 
@@ -89,7 +106,11 @@ The bar is *reinforcement*, not coverage. Empty is the right state.
 
 ## Did the artifact land?
 
-(Empty — first teach hasn't run yet.)
+### 2026-05-04 (paused mid-session)
+
+Artifact landed in Stage A of "Try it yourself": both `libbeans_core.a` and `libbeans_string.a` built, `file` confirmed `current ar archive random library`. Stage B verified clean teardown — back to single-library state. The chapter's outcome promise ("`cmake -B build && cmake --build build` produces `build/src/core/libbeans_core.a`") is met as of session pause.
+
+What's NOT done: the deliberate-error walkthrough (compiler conversation), the final "what you can run now" demo, and the teach-back questions. Resume at the compiler-conversation predict.
 
 The artifact for this chapter is "the learner can `cmake -B build && cmake --build build` and produce `libbeans_core.a`." Verifiable with `file build/src/core/libbeans_core.a` reporting `current ar archive random library`. The chapter provides this exact verification command.
 

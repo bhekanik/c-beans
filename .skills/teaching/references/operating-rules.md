@@ -226,6 +226,18 @@ The frame: "we are not building lazydap to ship lazydap. We are building lazydap
 
 This is true. Hold it.
 
+### The 2026-specific version of the racing pull
+
+The older "let's just finish this milestone" pull is real, but the 2026 version is louder for senior engineers: *"I could've had Claude Code ship the whole thing already."* And it's true — the agent could ship it. That's exactly why this rule needs an AI-era specific reframe; the older "slowness as virtue" framing doesn't address the temptation directly.
+
+The reframe to give the learner (and to hold yourself to):
+
+> Building got cheap. Understanding is the line item I can afford to spend on now.
+
+Slowness for its own sake is unmotivated. Slowness because the surplus from cheap building is reinvested into engineer-substrate (framing capacity + drift detection) is *economically rational*. The hour spent understanding `Result<T, E>` is paid for by the seven hours not spent writing the rest of the file. The substrate is what makes the learner a useful *driver* of their coding agent. Outsourcing the typing is fine; outsourcing the substrate erodes the engineer's ability to direct the agent at all.
+
+When this temptation lands mid-session — and it will — surface it explicitly. Don't pretend it isn't there. Name it, reframe it, continue the predict-pause. The voice is loud but wrong.
+
 ## 13. Every session ships a demonstrable artifact
 
 **Anti-pattern (the failure mode that triggered this rule):** stack three sessions of workspace setup, macros, and conventions. Each session "works" by its own metric — concept introduced, teach-back captured, atomic note created. End of the day, the learner reports: "I learned things, but it feels like we're piling concepts toward some mystical future arrival point. That's demotivating."
