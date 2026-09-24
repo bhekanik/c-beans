@@ -4,6 +4,13 @@ Per-milestone session cuts for teaching mode. The underlying milestones live in 
 
 Cognitive load discipline: **one new concept per session.** Some milestones are 1 session; dense ones are several. Each session produces three artifacts: a teach-back captured in the Obsidian session note (private), a public **book chapter** at `docs/book/<NN>-<title>.md`, and a teacher's-eye **teaching-notes** file at `docs/teaching/notes/<NN>-<title>.md`. See `.skills/teaching/SKILL.md` rules 14 and 15.
 
+**Per-session disciplines layered on top of the row content below** (added with the rules 20–23 expansion of the teaching skill):
+
+- Carry a live **learner-state** map every turn (mastered / shaky / recent_errors / priors) and reconcile into the chapter's notes-frontmatter snapshot at session end — rule 22.
+- Match pressure mode to the learner (*Socratic* / *Curious Guide* / *Devil's Advocate*); sharpen fuzzy terms as they appear; use the **L1 → L2 → L3** hint ladder — rule 21.
+- Tag every concept slice with an evidence posture (`consensus | tension | pitfall | misunderstanding | gap`) — rule 20.
+- When the learner stalls, walk down [`../chain/concept-dag.json`](../chain/concept-dag.json) to a solid floor before re-teaching — rule 23.
+
 c-beans is a **reproduce-mode** book: the learner builds the project from zero, chapter by chapter. Each chapter ends with a runnable artifact (unless explicitly named as ceremony — chapters 01 and 03 fall in that bucket).
 
 Quick map from session ID → book chapter:

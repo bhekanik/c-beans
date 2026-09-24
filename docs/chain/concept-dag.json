@@ -1,0 +1,1025 @@
+{
+  "generated": "2026-05-27T22:39:48.052780+00:00",
+  "chain": "bhekanik",
+  "concept_count": 9,
+  "chapters": [
+    {
+      "id": "c-beans:00",
+      "book": "c-beans",
+      "chapter": "00",
+      "title": "Introduction",
+      "status": "complete",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/00-introduction.md"
+    },
+    {
+      "id": "c-beans:0b",
+      "book": "c-beans",
+      "chapter": "0b",
+      "title": "What is c-beans",
+      "status": "complete",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/00b-what-is-c-beans.md"
+    },
+    {
+      "id": "c-beans:0c",
+      "book": "c-beans",
+      "chapter": "0c",
+      "title": "Why I'm learning C",
+      "status": "complete",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/00c-why-im-learning-c.md"
+    },
+    {
+      "id": "c-beans:1",
+      "book": "c-beans",
+      "chapter": "1",
+      "title": "CMake workspace",
+      "status": "complete",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/01-cmake-workspace.md"
+    },
+    {
+      "id": "c-beans:2",
+      "book": "c-beans",
+      "chapter": "2",
+      "title": "Hello, beans",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/02-hello-beans.md"
+    },
+    {
+      "id": "c-beans:3",
+      "book": "c-beans",
+      "chapter": "3",
+      "title": "Conventions as code",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/03-conventions-as-code.md"
+    },
+    {
+      "id": "c-beans:4",
+      "book": "c-beans",
+      "chapter": "4",
+      "title": "First segfault on purpose",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/04-first-segfault.md"
+    },
+    {
+      "id": "c-beans:5",
+      "book": "c-beans",
+      "chapter": "5",
+      "title": "Owned String",
+      "status": "stub",
+      "teaches": [
+        "manual-memory"
+      ],
+      "requires": [],
+      "path": "docs/book/05-owned-string.md"
+    },
+    {
+      "id": "c-beans:6",
+      "book": "c-beans",
+      "chapter": "6",
+      "title": "String views",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/06-string-view.md"
+    },
+    {
+      "id": "c-beans:7",
+      "book": "c-beans",
+      "chapter": "7",
+      "title": "Vec_int",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/07-vec-int.md"
+    },
+    {
+      "id": "c-beans:8",
+      "book": "c-beans",
+      "chapter": "8",
+      "title": "Generic Vec via macros",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/08-generic-vec-macros.md"
+    },
+    {
+      "id": "c-beans:9",
+      "book": "c-beans",
+      "chapter": "9",
+      "title": "Tagged unions",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/09-tagged-unions.md"
+    },
+    {
+      "id": "c-beans:10",
+      "book": "c-beans",
+      "chapter": "10",
+      "title": "File I/O",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/10-file-io.md"
+    },
+    {
+      "id": "c-beans:11",
+      "book": "c-beans",
+      "chapter": "11",
+      "title": "The tokenizer",
+      "status": "stub",
+      "teaches": [
+        "hand-rolled-parsing"
+      ],
+      "requires": [],
+      "path": "docs/book/11-tokenizer.md"
+    },
+    {
+      "id": "c-beans:12",
+      "book": "c-beans",
+      "chapter": "12",
+      "title": "String tokens \u2014 escapes",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/12-string-tokens.md"
+    },
+    {
+      "id": "c-beans:13",
+      "book": "c-beans",
+      "chapter": "13",
+      "title": "Number tokens",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/13-number-tokens.md"
+    },
+    {
+      "id": "c-beans:14",
+      "book": "c-beans",
+      "chapter": "14",
+      "title": "Recursive descent",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/14-recursive-descent.md"
+    },
+    {
+      "id": "c-beans:15",
+      "book": "c-beans",
+      "chapter": "15",
+      "title": "DOM to typed Task",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/15-dom-to-task.md"
+    },
+    {
+      "id": "c-beans:16",
+      "book": "c-beans",
+      "chapter": "16",
+      "title": "The Store interface",
+      "status": "stub",
+      "teaches": [
+        "polymorphism-in-c"
+      ],
+      "requires": [],
+      "path": "docs/book/16-store-interface.md"
+    },
+    {
+      "id": "c-beans:17",
+      "book": "c-beans",
+      "chapter": "17",
+      "title": "JSONL write",
+      "status": "stub",
+      "teaches": [
+        "file-persistence"
+      ],
+      "requires": [
+        "polymorphism-in-c"
+      ],
+      "path": "docs/book/17-jsonl-write.md"
+    },
+    {
+      "id": "c-beans:18",
+      "book": "c-beans",
+      "chapter": "18",
+      "title": "JSONL read",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/18-jsonl-read.md"
+    },
+    {
+      "id": "c-beans:19",
+      "book": "c-beans",
+      "chapter": "19",
+      "title": "Atomic file writes",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/19-atomic-writes.md"
+    },
+    {
+      "id": "c-beans:20",
+      "book": "c-beans",
+      "chapter": "20",
+      "title": "Testing as a discipline",
+      "status": "stub",
+      "teaches": [
+        "testing-in-c"
+      ],
+      "requires": [],
+      "path": "docs/book/20-testing-discipline.md"
+    },
+    {
+      "id": "c-beans:21",
+      "book": "c-beans",
+      "chapter": "21",
+      "title": "Task model + ULID",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/21-task-model.md"
+    },
+    {
+      "id": "c-beans:22",
+      "book": "c-beans",
+      "chapter": "22",
+      "title": "CRUD via CLI",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/22-crud-cli.md"
+    },
+    {
+      "id": "c-beans:23",
+      "book": "c-beans",
+      "chapter": "23",
+      "title": "Errors as values",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/23-errors.md"
+    },
+    {
+      "id": "c-beans:24",
+      "book": "c-beans",
+      "chapter": "24",
+      "title": "Hello, ncurses",
+      "status": "stub",
+      "teaches": [
+        "tui-with-ncurses"
+      ],
+      "requires": [
+        "file-persistence"
+      ],
+      "path": "docs/book/24-hello-ncurses.md"
+    },
+    {
+      "id": "c-beans:25",
+      "book": "c-beans",
+      "chapter": "25",
+      "title": "Render the task list",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/25-render-task-list.md"
+    },
+    {
+      "id": "c-beans:26",
+      "book": "c-beans",
+      "chapter": "26",
+      "title": "Navigation",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/26-tui-navigation.md"
+    },
+    {
+      "id": "c-beans:27",
+      "book": "c-beans",
+      "chapter": "27",
+      "title": "Modes \u2014 model/update/view",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/27-tui-modes.md"
+    },
+    {
+      "id": "c-beans:28",
+      "book": "c-beans",
+      "chapter": "28",
+      "title": "Add tasks via TUI",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/28-tui-add.md"
+    },
+    {
+      "id": "c-beans:29",
+      "book": "c-beans",
+      "chapter": "29",
+      "title": "Filter",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/29-tui-filter.md"
+    },
+    {
+      "id": "c-beans:30",
+      "book": "c-beans",
+      "chapter": "30",
+      "title": "Wire CRUD",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/30-tui-crud.md"
+    },
+    {
+      "id": "c-beans:31",
+      "book": "c-beans",
+      "chapter": "31",
+      "title": "XDG paths",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/31-xdg-paths.md"
+    },
+    {
+      "id": "c-beans:32",
+      "book": "c-beans",
+      "chapter": "32",
+      "title": "Error rendering in TUI",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/32-tui-error-bar.md"
+    },
+    {
+      "id": "c-beans:33",
+      "book": "c-beans",
+      "chapter": "33",
+      "title": "Ship v0.1",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/33-ship-v01.md"
+    },
+    {
+      "id": "c-beans:34",
+      "book": "c-beans",
+      "chapter": "34",
+      "title": "Embedding sqlite",
+      "status": "stub",
+      "teaches": [
+        "embedded-databases"
+      ],
+      "requires": [
+        "polymorphism-in-c"
+      ],
+      "path": "docs/book/34-embed-sqlite.md"
+    },
+    {
+      "id": "c-beans:35",
+      "book": "c-beans",
+      "chapter": "35",
+      "title": "Prepared statements",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/35-prepared-statements.md"
+    },
+    {
+      "id": "c-beans:36",
+      "book": "c-beans",
+      "chapter": "36",
+      "title": "Transactions, WAL",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/36-transactions-wal.md"
+    },
+    {
+      "id": "c-beans:37",
+      "book": "c-beans",
+      "chapter": "37",
+      "title": "JSONL \u2192 SQLite migration",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/37-jsonl-sqlite-migrate.md"
+    },
+    {
+      "id": "c-beans:38",
+      "book": "c-beans",
+      "chapter": "38",
+      "title": "Hello, sockets",
+      "status": "stub",
+      "teaches": [
+        "network-programming"
+      ],
+      "requires": [],
+      "path": "docs/book/38-hello-sockets.md"
+    },
+    {
+      "id": "c-beans:39",
+      "book": "c-beans",
+      "chapter": "39",
+      "title": "Length-prefixed framing",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/39-tcp-framing.md"
+    },
+    {
+      "id": "c-beans:40",
+      "book": "c-beans",
+      "chapter": "40",
+      "title": "Protocol design",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/40-protocol-design.md"
+    },
+    {
+      "id": "c-beans:41",
+      "book": "c-beans",
+      "chapter": "41",
+      "title": "Multi-client poll",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/41-multi-client-poll.md"
+    },
+    {
+      "id": "c-beans:42",
+      "book": "c-beans",
+      "chapter": "42",
+      "title": "Daemon extraction",
+      "status": "stub",
+      "teaches": [
+        "daemon-architecture"
+      ],
+      "requires": [
+        "network-programming",
+        "file-persistence"
+      ],
+      "path": "docs/book/42-daemon-extraction.md"
+    },
+    {
+      "id": "c-beans:43",
+      "book": "c-beans",
+      "chapter": "43",
+      "title": "TUI as thin client",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/43-tui-thin-client.md"
+    },
+    {
+      "id": "lazydap:00",
+      "book": "lazydap",
+      "chapter": "00",
+      "title": "Introduction",
+      "status": "complete",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/00-introduction.md"
+    },
+    {
+      "id": "lazydap:0b",
+      "book": "lazydap",
+      "chapter": "0b",
+      "title": "What is lazydap",
+      "status": "complete",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/00b-what-is-lazydap.md"
+    },
+    {
+      "id": "lazydap:0c",
+      "book": "lazydap",
+      "chapter": "0c",
+      "title": "Why I built this",
+      "status": "complete",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/00c-why-i-built-this.md"
+    },
+    {
+      "id": "lazydap:1",
+      "book": "lazydap",
+      "chapter": "1",
+      "title": "Cargo workspaces",
+      "status": "complete",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/01-cargo-workspaces.md"
+    },
+    {
+      "id": "lazydap:2",
+      "book": "lazydap",
+      "chapter": "2",
+      "title": "Async main and clap",
+      "status": "complete",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/02-tokio-main-clap.md"
+    },
+    {
+      "id": "lazydap:3",
+      "book": "lazydap",
+      "chapter": "3",
+      "title": "Convention as code",
+      "status": "complete",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/03-conventions-as-code.md"
+    },
+    {
+      "id": "lazydap:4",
+      "book": "lazydap",
+      "chapter": "4",
+      "title": "Hello, adapter",
+      "status": "complete",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/04-hello-adapter.md"
+    },
+    {
+      "id": "lazydap:5",
+      "book": "lazydap",
+      "chapter": "5",
+      "title": "Read one message",
+      "status": "complete",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/05-read-one-message.md"
+    },
+    {
+      "id": "lazydap:6",
+      "book": "lazydap",
+      "chapter": "6",
+      "title": "Serde and typed protocols",
+      "status": "complete",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/06-serde-typed-protocols.md"
+    },
+    {
+      "id": "lazydap:7",
+      "book": "lazydap",
+      "chapter": "7",
+      "title": "DAP transport and atomic seq",
+      "status": "complete",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/07-dap-transport-and-seq.md"
+    },
+    {
+      "id": "lazydap:8",
+      "book": "lazydap",
+      "chapter": "8",
+      "title": "Event streaming and tagged enums",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/08-event-streaming.md"
+    },
+    {
+      "id": "lazydap:9",
+      "book": "lazydap",
+      "chapter": "9",
+      "title": "The DAP launch dance",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/09-dap-launch-dance.md"
+    },
+    {
+      "id": "lazydap:10",
+      "book": "lazydap",
+      "chapter": "10",
+      "title": "The full handshake order",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/10-full-handshake-order.md"
+    },
+    {
+      "id": "lazydap:11",
+      "book": "lazydap",
+      "chapter": "11",
+      "title": "First real breakpoint",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/11-first-real-breakpoint.md"
+    },
+    {
+      "id": "lazydap:12",
+      "book": "lazydap",
+      "chapter": "12",
+      "title": "The protocol crate and IpcMessage envelope",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/12-protocol-crate-ipc-envelope.md"
+    },
+    {
+      "id": "lazydap:13",
+      "book": "lazydap",
+      "chapter": "13",
+      "title": "Length-prefixed JSON codec",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/13-length-prefixed-json-codec.md"
+    },
+    {
+      "id": "lazydap:14",
+      "book": "lazydap",
+      "chapter": "14",
+      "title": "Unix sockets and the accept loop",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/14-unix-sockets-accept-loop.md"
+    },
+    {
+      "id": "lazydap:15",
+      "book": "lazydap",
+      "chapter": "15",
+      "title": "Auto-spawning the daemon",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/15-auto-spawning-daemon.md"
+    },
+    {
+      "id": "lazydap:16",
+      "book": "lazydap",
+      "chapter": "16",
+      "title": "Wire lazydap launch end-to-end",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/16-wire-launch-end-to-end.md"
+    },
+    {
+      "id": "lazydap:17",
+      "book": "lazydap",
+      "chapter": "17",
+      "title": "Stepping commands",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/17-stepping-commands.md"
+    },
+    {
+      "id": "lazydap:18",
+      "book": "lazydap",
+      "chapter": "18",
+      "title": "The wait design",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/18-wait-design.md"
+    },
+    {
+      "id": "lazydap:19",
+      "book": "lazydap",
+      "chapter": "19",
+      "title": "Inspection commands",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/19-inspection-commands.md"
+    },
+    {
+      "id": "lazydap:20",
+      "book": "lazydap",
+      "chapter": "20",
+      "title": "Persistent breakpoints",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/20-persistent-breakpoints.md"
+    },
+    {
+      "id": "lazydap:21",
+      "book": "lazydap",
+      "chapter": "21",
+      "title": "Skill ZIP and agent verification",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/21-skill-zip-agent-verification.md"
+    },
+    {
+      "id": "lazydap:22",
+      "book": "lazydap",
+      "chapter": "22",
+      "title": "Hello ratatui",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/22-hello-ratatui.md"
+    },
+    {
+      "id": "lazydap:23",
+      "book": "lazydap",
+      "chapter": "23",
+      "title": "Source pane and scrolling",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/23-source-pane-scrolling.md"
+    },
+    {
+      "id": "lazydap:24",
+      "book": "lazydap",
+      "chapter": "24",
+      "title": "Define Model, Msg, and Cmd",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/24-model-msg-cmd.md"
+    },
+    {
+      "id": "lazydap:25",
+      "book": "lazydap",
+      "chapter": "25",
+      "title": "Wire the main loop",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/25-wire-main-loop.md"
+    },
+    {
+      "id": "lazydap:26",
+      "book": "lazydap",
+      "chapter": "26",
+      "title": "IPC client and Subscribe",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/26-ipc-client-subscribe.md"
+    },
+    {
+      "id": "lazydap:27",
+      "book": "lazydap",
+      "chapter": "27",
+      "title": "Stepping commands wired",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/27-stepping-wired.md"
+    },
+    {
+      "id": "lazydap:28",
+      "book": "lazydap",
+      "chapter": "28",
+      "title": "Source pane shows current line",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/28-source-pane-current-line.md"
+    },
+    {
+      "id": "lazydap:29",
+      "book": "lazydap",
+      "chapter": "29",
+      "title": "Stack pane",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/29-stack-pane.md"
+    },
+    {
+      "id": "lazydap:30",
+      "book": "lazydap",
+      "chapter": "30",
+      "title": "Scope tree render",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/30-scope-tree-render.md"
+    },
+    {
+      "id": "lazydap:31",
+      "book": "lazydap",
+      "chapter": "31",
+      "title": "Lazy expand variables",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/31-lazy-expand-variables.md"
+    },
+    {
+      "id": "lazydap:32",
+      "book": "lazydap",
+      "chapter": "32",
+      "title": "Toggle breakpoint from TUI",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/32-toggle-breakpoint.md"
+    },
+    {
+      "id": "lazydap:33",
+      "book": "lazydap",
+      "chapter": "33",
+      "title": "Config crate and global config",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/33-config-crate.md"
+    },
+    {
+      "id": "lazydap:34",
+      "book": "lazydap",
+      "chapter": "34",
+      "title": "launch.json import",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/34-launch-json-import.md"
+    },
+    {
+      "id": "lazydap:35",
+      "book": "lazydap",
+      "chapter": "35",
+      "title": "Release prep and ship v0.1",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/35-release-prep-ship-v01.md"
+    },
+    {
+      "id": "lazydap:36",
+      "book": "lazydap",
+      "chapter": "36",
+      "title": "Watches pane and persistence",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/36-watches-pane.md"
+    },
+    {
+      "id": "lazydap:37",
+      "book": "lazydap",
+      "chapter": "37",
+      "title": "REPL pane",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/37-repl-pane.md"
+    },
+    {
+      "id": "lazydap:38",
+      "book": "lazydap",
+      "chapter": "38",
+      "title": "debugpy adapter crate",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/38-debugpy-adapter.md"
+    },
+    {
+      "id": "lazydap:39",
+      "book": "lazydap",
+      "chapter": "39",
+      "title": "Adapter routing and auto-detect",
+      "status": "stub",
+      "teaches": [],
+      "requires": [],
+      "path": "docs/book/39-adapter-routing.md"
+    }
+  ],
+  "nodes": {
+    "daemon-architecture": {
+      "taught_by": [
+        "c-beans:42"
+      ],
+      "required_by": [],
+      "unresolved": false
+    },
+    "embedded-databases": {
+      "taught_by": [
+        "c-beans:34"
+      ],
+      "required_by": [],
+      "unresolved": false
+    },
+    "file-persistence": {
+      "taught_by": [
+        "c-beans:17"
+      ],
+      "required_by": [
+        "c-beans:24",
+        "c-beans:42"
+      ],
+      "unresolved": false
+    },
+    "hand-rolled-parsing": {
+      "taught_by": [
+        "c-beans:11"
+      ],
+      "required_by": [],
+      "unresolved": false
+    },
+    "manual-memory": {
+      "taught_by": [
+        "c-beans:5"
+      ],
+      "required_by": [],
+      "unresolved": false
+    },
+    "network-programming": {
+      "taught_by": [
+        "c-beans:38"
+      ],
+      "required_by": [
+        "c-beans:42"
+      ],
+      "unresolved": false
+    },
+    "polymorphism-in-c": {
+      "taught_by": [
+        "c-beans:16"
+      ],
+      "required_by": [
+        "c-beans:17",
+        "c-beans:34"
+      ],
+      "unresolved": false
+    },
+    "testing-in-c": {
+      "taught_by": [
+        "c-beans:20"
+      ],
+      "required_by": [],
+      "unresolved": false
+    },
+    "tui-with-ncurses": {
+      "taught_by": [
+        "c-beans:24"
+      ],
+      "required_by": [],
+      "unresolved": false
+    }
+  },
+  "edges": [
+    {
+      "chapter": "c-beans:17",
+      "requires": "polymorphism-in-c",
+      "satisfied_by": [
+        "c-beans:16"
+      ]
+    },
+    {
+      "chapter": "c-beans:24",
+      "requires": "file-persistence",
+      "satisfied_by": [
+        "c-beans:17"
+      ]
+    },
+    {
+      "chapter": "c-beans:34",
+      "requires": "polymorphism-in-c",
+      "satisfied_by": [
+        "c-beans:16"
+      ]
+    },
+    {
+      "chapter": "c-beans:42",
+      "requires": "network-programming",
+      "satisfied_by": [
+        "c-beans:38"
+      ]
+    },
+    {
+      "chapter": "c-beans:42",
+      "requires": "file-persistence",
+      "satisfied_by": [
+        "c-beans:17"
+      ]
+    }
+  ],
+  "unresolved": []
+}

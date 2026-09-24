@@ -1,0 +1,48 @@
+{
+  "generated": "2026-05-25T20:21:18.319294+00:00",
+  "anchor_repo": "/Users/bhekanik/code/bhekanik/c-beans",
+  "parser": "regex-fallback",
+  "entry_point": "cmake-build-debug/CMakeFiles/4.2.2/CompilerIdC/CMakeCCompilerId.c",
+  "file_count": 3,
+  "edge_count": 0,
+  "warnings": [],
+  "files": [
+    {
+      "path": "cmake-build-debug/CMakeFiles/4.2.2/CompilerIdC/CMakeCCompilerId.c",
+      "lang": "c",
+      "parsed_with": "regex",
+      "depth": 0,
+      "bucket": "Overview & entry point",
+      "fan_in": 0,
+      "fan_out": 0,
+      "imports_resolved": [],
+      "defs": [],
+      "exports": []
+    },
+    {
+      "path": "cmake-build-debug/CMakeFiles/4.2.2/CompilerIdC/apple-sdk.c",
+      "lang": "c",
+      "parsed_with": "regex",
+      "depth": null,
+      "bucket": "Unreached (no import path from entry) \u2014 order by fan-in",
+      "fan_in": 0,
+      "fan_out": 0,
+      "imports_resolved": [],
+      "defs": [],
+      "exports": []
+    },
+    {
+      "path": "src/core/empty.c",
+      "lang": "c",
+      "parsed_with": "regex",
+      "depth": null,
+      "bucket": "Unreached (no import path from entry) \u2014 order by fan-in",
+      "fan_in": 0,
+      "fan_out": 0,
+      "imports_resolved": [],
+      "defs": [],
+      "exports": []
+    }
+  ],
+  "edges": []
+}
