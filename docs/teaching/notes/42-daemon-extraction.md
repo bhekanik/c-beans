@@ -3,6 +3,11 @@ chapter: 42
 session_id: M15-5
 title: Daemon extraction
 sessions_run: []
+learner_state:        # rule 22 — persisted snapshot; reconcile at session end
+  mastered: []        # concepts demonstrated unaided
+  shaky: []           # met but not solid; re-probe and retrieve early
+  recent_errors: []   # specific wrong predictions / compiler conversations, last few turns
+  priors: []          # opinionated prior-language models that shape predictions
 ---
 
 # Teaching notes — Chapter 42: Daemon extraction
@@ -16,6 +21,26 @@ sessions_run: []
 ## Common wrong predictions
 
 (Empty — first teach hasn't happened. Anticipated wrong predictions can be drafted from the JS/TS pain anchor in `docs/teaching/c-anchor-table.md`.)
+
+## Common misunderstandings
+
+Reusable false models that fire here regardless of which predict-pause surfaces them. *Empty until the first live teach — see [notes/01](01-cmake-workspace.md) for the table shape.*
+
+| Misunderstanding | Why it is tempting | Corrected model | Where the chapter addresses it |
+|---|---|---|---|
+| *(stub)* | *(stub)* | *(stub)* | *(stub)* |
+
+## Probe bank
+
+Diagnostic questions a future teacher can fire to test whether each misunderstanding is active (rule 21). *Empty until the first live teach.*
+
+| Misunderstanding / pitfall | Diagnostic probe | Expected wrong answer | Calibration if wrong | Mastery signal (Aware / Confident) |
+|---|---|---|---|---|
+| *(stub)* | *(stub)* | *(stub)* | *(stub)* | *(stub)* |
+
+## Expectations and graduated hints
+
+For each predict-pause and exercise, hold (a) the expectations a correct answer must contain and (b) a hint ladder L1 → L2 → L3 (rule 21). Start at L1 every time; drop a level only after a real attempt fails. *Empty until the first live teach — see [notes/01](01-cmake-workspace.md) for shape.*
 
 ## What surprised the learner
 

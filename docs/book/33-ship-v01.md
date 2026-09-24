@@ -7,6 +7,11 @@ estimated_time_minutes: 90
 artifact: v0.1.0 tag is pushed; LICENSE / CHANGELOG / README polish landed; install instructions work end-to-end on a fresh machine; demo GIF
 status: stub
 related_milestone: docs/implementation/tasks/M13-polish.md
+evidence:                       # rule 20 — fill when the chapter is drafted live
+  status: exploratory           # consensus | tension | pitfall-heavy | misunderstanding | gap | exploratory
+  sources: []                   # - { title, url, role }
+  common_misunderstandings: []  # - <false model this chapter corrects>
+  gaps: []                      # - <what this chapter deliberately does not cover yet>
 ---
 
 # Chapter 33 — Ship v0.1
@@ -38,6 +43,24 @@ Run chapter 32's artifact to confirm the baseline. Exact verification commands l
 7. *Pain anchors covered* — table summarising what JS/TS pain each new construct addresses.
 
 The companion teaching-notes file at [`docs/teaching/notes/33-ship-v01.md`](../teaching/notes/33-ship-v01.md) gets filled during the live session.
+
+## What people usually get wrong
+
+*Stub — filled when the chapter is drafted live. Capture the reusable false models a learner brings here (often from JS/TS/Python) and the corrected model. See [chapter 01](01-cmake-workspace.md) for shape.*
+
+---
+
+## What this chapter does not cover yet
+
+*Stub — list what is deliberately deferred to keep the one-concept-per-session cap honest. See [chapter 01](01-cmake-workspace.md) for shape.*
+
+---
+
+## Sources
+
+*Stub — primary docs/specs/code references that shape the chapter. Use when you say "this is consensus" (rule 20). See [chapter 01](01-cmake-workspace.md) for shape.*
+
+---
 
 ## See also
 

@@ -15,6 +15,29 @@ new_concepts:
   - Static libraries vs executables — what `STATIC` means and what gets produced
 status: complete
 related_milestone: docs/implementation/00-workspace-setup.md
+evidence:
+  status: consensus
+  sources:
+    - title: "CMake docs — cmake-buildsystem(7)"
+      url: "https://cmake.org/cmake/help/latest/manual/cmake-buildsystem.7.html"
+      role: "Canonical reference for targets, target properties, and the modern-CMake model used throughout the chapter."
+    - title: "Effective Modern CMake (Manuel Binna)"
+      url: "https://gist.github.com/mbinna/c61dbb39bca0e4fb7d1f73b0d66a4fd1"
+      role: "Convention guide; the chapter follows its `target_*` over global-mutation discipline."
+    - title: "Daniel Pfeifer — Effective CMake (CppCon 2017 / Meeting C++ talk)"
+      url: "https://www.youtube.com/watch?v=bsXLMQ6WgIk"
+      role: "Origin of the 'modern CMake = targets and properties, not variables' framing the chapter teaches."
+  common_misunderstandings:
+    - "CMake *is* the build tool. (No — it generates files for the actual build tool: Make, Ninja, MSBuild.)"
+    - "`add_subdirectory` is like C's `#include`. (No — it's a build-graph relationship, not textual inclusion.)"
+    - "Static library output is a binary you can run. (No — it's an archive of `.o` files; needs to be linked into an executable.)"
+    - "Re-run `cmake -B build` after every code change. (No — only after `CMakeLists.txt` changes; `cmake --build build` handles the rest.)"
+  gaps:
+    - "CMake variables and the cache (only mentioned in passing)."
+    - "Generator expressions (`$<...>`)."
+    - "`install()` / `export()` and consumer-side `find_package`."
+    - "Multi-config generators (Xcode, VS) and `CMAKE_BUILD_TYPE` vs per-target config."
+    - "Custom commands, custom targets, and code generation — Phase 0 stays small."
 ---
 
 # Chapter 01 — CMake workspace
@@ -544,6 +567,31 @@ Before moving on, answer these in your own words. If you can't, re-read the rele
 
 ---
 
+## What people usually get wrong
+
+These are the recurring false models. If any of them feel right to you, re-open the relevant section before moving on.
+
+- **"CMake builds the project."** It doesn't — `cmake -B build` *configures* (generates a Make- or Ninja-file from your `CMakeLists.txt`); `cmake --build build` is what actually invokes the underlying build tool. The split exists because the configure step is comparatively slow and you don't want to redo it on every save. Mental model: CMake is to Ninja what `tsc --emit` is to `node` — generation vs execution.
+- **"`add_subdirectory(src/core)` is roughly `#include "src/core/*.c"`."** No — `add_subdirectory` declares a *build-graph edge*, not a textual include. The subdirectory's `CMakeLists.txt` runs in its own variable scope and registers targets (libraries, executables) with the parent. Files don't get spliced; targets get *named and wired*.
+- **"A `STATIC` library is a thing I can run."** A static library (`libbeans_core.a`) is an archive of `.o` files plus an index. It is not an executable; it has no entry point. It only becomes runnable when a `target_link_libraries(some_executable PRIVATE beans_core)` pulls it into a link against an executable target. The next chapter is where that flips.
+- **"I need to re-run `cmake -B build` after every change."** No — CMake records the file dependencies it sniffed during configure. As long as you only change *source files*, `cmake --build build` re-runs only the affected compile/link steps. You re-configure when `CMakeLists.txt` itself changes (or when you add a new source file CMake doesn't yet know about).
+- **"`PUBLIC` / `PRIVATE` / `INTERFACE` on `target_include_directories` are about visibility in the C/C++ sense."** They're about *which targets inherit the include path* when they link against this target. `PUBLIC` = me and my consumers; `PRIVATE` = just me; `INTERFACE` = just my consumers. It's transitive-include propagation, not access control.
+
+---
+
+## What this chapter does not cover yet
+
+Deliberately deferred to keep the one-concept-per-session cap honest. Each gets its own chapter or session when it becomes load-bearing:
+
+- **CMake variables and the cache.** `set()`, `option()`, `CMAKE_CACHE`, `ccmake` / `cmake-gui`. Avoided here because modern-CMake style prefers target properties over global variables.
+- **Generator expressions** (`$<CONFIG:Debug>`, `$<TARGET_OBJECTS:...>`, etc.). They're the lingua franca of advanced CMake; they show up the first time we need per-config compile flags.
+- **`install()` / `export()`** and the consumer-side `find_package` flow. c-beans isn't being installed to a system prefix, so this stays out of scope.
+- **External dependencies** via `find_package`, `FetchContent`, vcpkg, Conan. ncurses (Phase E) and SQLite (Phase G) will be where this lands; we'll pick exactly one mechanism then.
+- **Multi-config generators** (Xcode, Visual Studio) and the `CMAKE_BUILD_TYPE` vs per-target-config distinction. Single-config Ninja is plenty for now.
+- **Custom commands** (`add_custom_command`, `add_custom_target`), code generation, and `configure_file`. Phase 0 deliberately stays small.
+
+---
+
 ## Exercises
 
 > Per rule 19. **None ship for this chapter** — it's ceremony, and the only thing to drill (add a second library) is already round 3 of the gradual release in "Try it yourself" above. Adding a separate sibling exercise set would just rewrite the chapter's example. The bar is reinforcement, not coverage; this chapter doesn't earn one.
@@ -562,6 +610,19 @@ The first chapter that ships exercises is chapter 04 ([`First segfault`](04-firs
 | `target_include_directories(... PUBLIC ...)` | "Every consumer of this library has to redundantly add `-I` paths" | Manual `-I` flag dance |
 | `CMAKE_EXPORT_COMPILE_COMMANDS ON` | "My language server has no idea what flags this file is compiled with" | clangd / IDE setup |
 | Out-of-source build (`-B build`) | `make clean` not actually cleaning everything; `.o` files scattered through the source tree | In-source builds |
+
+---
+
+## Sources
+
+The chapter is **consensus territory** — modern CMake (3.20+) is well-documented and the idioms used here are widely shared.
+
+- [CMake docs — `cmake-buildsystem(7)`](https://cmake.org/cmake/help/latest/manual/cmake-buildsystem.7.html) — the canonical reference for targets, target properties, and the modern-CMake build model used throughout this chapter.
+- [CMake docs — `cmake-commands(7)`](https://cmake.org/cmake/help/latest/manual/cmake-commands.7.html) — every command this chapter uses (`add_library`, `add_subdirectory`, `target_include_directories`, etc.) has its full signature here.
+- [Effective Modern CMake — Manuel Binna](https://gist.github.com/mbinna/c61dbb39bca0e4fb7d1f73b0d66a4fd1) — opinionated convention guide; the chapter follows its "prefer `target_*` over global mutation" discipline.
+- [Daniel Pfeifer — *Effective CMake* (Meeting C++ 2017)](https://www.youtube.com/watch?v=bsXLMQ6WgIk) — origin of the "modern CMake = targets and properties, not variables" framing.
+- [Modern CMake (Henry Schreiner et al.)](https://cliutils.gitlab.io/modern-cmake/) — long-form online book; useful when you need a worked example beyond what the official docs spell out.
+- Sister-project reference: [lazydap's `01-cargo-workspaces.md`](https://github.com/planetaryescape/lazydap/blob/main/docs/book/01-cargo-workspaces.md) — Rust's Cargo equivalent. Shows how Rust collapses the configure/build/dependency-resolution split into one tool.
 
 ---
 
