@@ -101,11 +101,58 @@ What this revealed: <the conceptual insight>
 
 <The learner's actual words. Don't polish. The roughness is data — it shows what's solid and what's still hand-wavy.>
 
+## Learner level
+
+<Use the rule 21 rubric. Trust diagnostic/tension tests more than self-rating.>
+
+- **Start:** Unknown | Confused | Aware | Confident — <evidence>
+- **End:** Unknown | Confused | Aware | Confident — <evidence>
+- **Tension / edge-case test used:** <question asked and what it revealed>
+
+### Learner-state carry (rule 22)
+
+<The four-field snapshot to reconcile into the teaching-notes `learner_state:` at session end. Capture start and end so the delta is visible.>
+
+- **Mastered (added this session):** <concepts now demonstrated unaided>
+- **Shaky (still / newly):** <met but not solid>
+- **Recent errors:** <specific wrong predictions / compiler conversations this session>
+- **Priors surfaced:** <opinionated prior-language models that shaped predictions>
+
+## Socratic pressure notes
+
+- **Mode shifts:** <Socratic / Curious Guide / Devil's Advocate, why, and how the learner responded>
+- **Fuzzy terms sharpened:** <overloaded terms paused on, canonical terms chosen, why it mattered>
+- **Probe questions used:** <diagnostic questions for misunderstandings or pitfalls>
+- **Learner priors / biases surfaced:** <useful but opinionated prior models that shaped predictions>
+- **One-reframe moments:** <when the learner was stuck, what single reframe was given, what they did next>
+
 ## Open questions
 
 - <Anything the learner asked that we didn't fully answer>
 - <Anything I noticed they're still shaky on>
 - <Concepts we touched briefly but deferred>
+
+## Evidence posture
+
+<Consensus, tensions, pitfalls, misunderstandings, and gaps surfaced in this session. Keep this lightweight; the point is to calibrate future teaching, not to turn every session note into a paper.>
+
+- **Consensus:** <claims that are stable, source-backed, or verified against code/docs>
+- **Tensions:** <real trade-offs or active disagreements; do not list mere branches>
+- **Common misunderstandings:** <false models the learner had or that people commonly bring>
+- **Pitfalls:** <runtime/compiler/tooling behaviours that surprise people>
+- **Gaps / deferred questions:** <what the one-concept cap intentionally left out>
+- **Sources consulted:** <only sources that materially shaped the explanation>
+
+## Working map (for Socratic concept sessions)
+
+<Use when the artifact is an understanding map rather than code. Keep this as a map, not a transcript.>
+
+- **Root:** <topic/question>
+- **Current branch:** <active branch>
+- **Real tension:** <if any>
+- **Leaves explored:** <fine-grained questions covered>
+- **Unexplored siblings:** <what remains>
+- **Current state:** INCOMPLETE | COMPLETE
 
 ## Atomic concept notes touched this session
 

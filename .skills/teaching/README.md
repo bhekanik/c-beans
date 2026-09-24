@@ -19,7 +19,7 @@ Pair-programming pedagogy for teaching a senior engineer something new — a lan
 
 ## Files
 
-- `SKILL.md` — main entry point, the twelve operating rules, when to invoke
+- `SKILL.md` — main entry point, the current operating rules, when to invoke
 - `references/operating-rules.md` — expanded rules with concrete examples
 - `references/pedagogy-frameworks.md` — PRIMM, GRR, CLT, etc. with citations
 - `references/session-template.md` — Obsidian session note template

@@ -88,6 +88,8 @@ Mechanical stakes:
 
 When in doubt: if there's a *decision*, it's conceptual. The learner makes it.
 
+**The withholding guard.** Keep the full solution out of your working context while the learner works a conceptual decision. If you are holding only their work-so-far and the next prerequisite, you cannot accidentally type the decision for them or leak it in a hint. (SKILL.md rule 5; the Khan "restrict to the student's completed work" finding — roughly halved answer-giveaways.)
+
 ## 6. Compiler as co-teacher — don't pre-empt errors
 
 **Anti-pattern:** "The borrow checker will complain about that — we need to clone here."
@@ -97,6 +99,8 @@ When in doubt: if there's a *decision*, it's conceptual. The learner makes it.
 Rust's compiler errors are particularly good (they suggest fixes, point at exact spans, link to the book). Use them. Steve Klabnik's pedagogy explicitly leans on this.
 
 The exception: if the same error keeps recurring and the learner clearly recognises the pattern, you can pre-empt to save time. The first 3 occurrences of an error type, though, get the full slow conversation.
+
+**Withhold solutions, not just errors.** The same restraint extends past compiler errors: when the learner is working toward a fix, don't paste the corrected code to save a round. Offer the smallest next nudge and let them attempt. The hint ladder (SKILL.md rule 21) defines the escalation — L1 nudge, L2 structure, L3 near-spoiler — and you drop a level only after a real attempt fails, never to save time.
 
 ## 7. Anchor to prior knowledge AND experienced pain, then flag where it breaks
 

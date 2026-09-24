@@ -85,12 +85,28 @@ The function must satisfy:
 cargo test --workspace --test chapter_NN_exercises wield
 ```
 
-### Hint (peek if stuck for >10 minutes)
+### Hints (peek in order — only when genuinely stuck)
+
+Per rule 21's hint ladder: open one level at a time, and only after a real attempt.
 
 <details>
-<summary>Click for hint</summary>
+<summary>L1 — nudge</summary>
 
-<One paragraph hint. Doesn't give away the answer; nudges past the sticking point. Often: "look at how the chapter solved a related problem at line X.">
+<Point at the area; ask a sharper question. No structure given. Often: "look at how the chapter solved a related problem at line X.">
+
+</details>
+
+<details>
+<summary>L2 — structure</summary>
+
+<Name the shape of the answer or the relevant rule. Still no code.>
+
+</details>
+
+<details>
+<summary>L3 — near-spoiler</summary>
+
+<Give the missing piece directly, then have the learner restate why it works. Use only after a genuine attempt has failed.>
 
 </details>
 
@@ -194,7 +210,7 @@ This is a written exercise — answer in 200–400 words. No code expected. The 
 - **Each exercise has a `Sticky-point targeted` line.** This is what justifies the exercise existing. If you can't articulate which sticky point an exercise drills, it probably shouldn't exist — drop it rather than ship a generic drill.
 - **Contracts are explicit.** Function signature, file location, expected behaviour. The learner shouldn't waste time scaffolding — they should spend time *thinking about the concept*.
 - **Tests deterministic where possible.** Behavioural through the contract by default. When the implementation IS the lesson (e.g., "use `AtomicI64`, not `Mutex<i64>`"), test the implementation explicitly **and label this** in the prose so the learner knows their freedom is bounded and why.
-- **Hints stay non-spoiling.** A good hint says "look at section X of the chapter" or "consider what happens when the input is empty." It does not give the answer.
+- **Hints fade in levels, never giveaways** (rule 21). Offer a ladder rather than one hint: L1 nudge ("look at section X", "what happens when the input is empty?"), L2 structure (name the shape of the answer, still no code), L3 near-spoiler (the missing line, then have the learner restate why). Solo readers open the levels in order via nested `<details>`; LLM-as-teacher escalates only after a real attempt fails.
 - **Cross-language exercises specify setup.** Don't assume the reader has a C toolchain or a Python interpreter ready — give the one-line setup command.
 - **Multi-stage exercises follow rule 4's checkpoint discipline.** When an exercise has setup + work + teardown (or any sequence with multiple verifiable states), structure as `do stage A → tell me → I verify → do stage B → tell me → I verify`. Don't collapse cleanup into the same step as the build. The cleanup destroys evidence the agent needs. See chapter-template's "Try it yourself" multi-stage shape.
 

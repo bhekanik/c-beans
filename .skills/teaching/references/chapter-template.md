@@ -34,6 +34,16 @@ new_concepts:
   - kill_on_drop and the Drop trait (gloss only)
   - Option::take and mutability propagation through fields
 related_milestone: docs/implementation/tasks/M00-hello-adapter.md
+evidence:
+  status: consensus                         # consensus | tension | pitfall-heavy | disputed | exploratory
+  sources:
+    - title: <source title>
+      url: <url>
+      role: <why this source shaped the chapter>
+  common_misunderstandings:
+    - <false model this chapter corrects>
+  gaps:
+    - <what this chapter deliberately does not cover yet>
 ---
 ```
 
@@ -74,7 +84,7 @@ If you skipped chapters, read [the setup recovery section](../book/00-introducti
 
 > 🤔 **Q:** <a question that surfaces the reader's prior model — JS / TS / Python / C analog>
 
-Pause and answer in your head before continuing. (For LLM mode: the agent will wait for your answer.)
+Pause and answer in your head before continuing. (For LLM mode: the agent will wait for your answer.) If you use a term loosely here, your teacher may pause to sharpen it. That pause is part of the lesson, not a tangent.
 
 <details>
 <summary>Click after you've answered</summary>
@@ -129,6 +139,8 @@ If you got something different, common causes are:
 - (likely cause 1) — fix is `<fix>`
 - (likely cause 2) — fix is `<fix>`
 
+**Graduated hints (rules 5–6, 21).** If you stall, don't reach for the answer. Escalate one level at a time, only after a real attempt: **L1 nudge** (point at the area, sharper question) → **L2 structure** (name the shape of the answer, no code) → **L3 near-spoiler** (the missing piece, then restate why). Solo readers get this as nested `<details>` blocks; an LLM-as-teacher applies it live and drops a level only when an attempt genuinely fails.
+
 ### Multi-stage shape (use when the exercise has cleanup, restore, or distinct verifiable states)
 
 Per rule 4's checkpoint discipline, multi-stage exercises must pause for verification *between* stages, never collapse into "do everything then tell me." The cleanup or restore step destroys the prior state's evidence; without a checkpoint the agent can't verify the build worked.
@@ -182,6 +194,22 @@ Before moving on, answer these in your own words. If you can't, re-read the rele
 
 ---
 
+## What people usually get wrong
+
+(Use when the concept has predictable false models. Be sympathetic: most misunderstandings are reasonable transfers from another language, framework, or simplified slogan. Each important misunderstanding should also have a diagnostic probe in the teaching-notes companion.)
+
+- <misunderstanding> — <why it is tempting> — <the corrected model>
+
+> 🧪 **Probe:** <short question or prediction that reveals whether this false model is present>
+
+## What this chapter does not cover yet
+
+(Use this to preserve the one-concept cap without pretending the simplified model is the whole truth.)
+
+- <deferred concept or weakly supported area> — <where it will be handled, or why skepticism is warranted>
+
+---
+
 ## Pain anchors covered
 
 | New construct | The pain it solves | In which language |
@@ -205,6 +233,12 @@ Pick one or all; live in-session if your agent is running you through this chapt
 
 ---
 
+## Sources
+
+(Only include sources that materially affected the chapter. Prefer primary docs/specs/code for operational claims; use papers or expert commentary when the concept is genuinely research-shaped. Record rejected sources in teaching notes, not the public chapter, unless the rejection itself is educational.)
+
+- [<Source title>](<url>) — <role in this chapter>
+
 ## See also
 
 - ← [Chapter NN-1: <previous title>](NN-1-name.md)
@@ -221,6 +255,9 @@ Pick one or all; live in-session if your agent is running you through this chapt
 - **Predict-pauses use `<details>` tags** so reading flows when collapsed and reveals the calibration when expanded. Works on GitHub, mdBook, and most renderers.
 - **Honour the cumulative narrative.** Every chapter ends with a "ladder check" connecting back to the prior artifact. Every chapter starts with a setup-verification step.
 - **One concept per chapter** is the cap (rule 3). If you find yourself writing two new concepts, split into two chapters and update the project's session plan.
+- **Evidence posture matters** (rule 20). Mark consensus, real tensions, pitfalls, misunderstandings, and gaps in frontmatter when external knowledge shapes the chapter. Do not manufacture tension where there is only branching.
+- **Socratic pressure matters** (rule 21). Common misunderstandings should become probes. Fuzzy terms should be sharpened live. If the learner claims confidence, test an edge case or real tension before moving on.
+- **Graduated hints, never giveaways** (rules 5–6, 21). When a reader stalls on a "Try it yourself" or a predict-pause, escalate L1 nudge → L2 structure → L3 near-spoiler; drop a level only after a real attempt. Withhold the finished solution; offer the smallest hint that closes the specific gap.
 
 ## Companion: teaching notes
 
@@ -237,6 +274,7 @@ See `references/teaching-notes-template.md` for the structure. Update the teachi
 
 When an agent runs a session live (LLM-as-teacher mode), the chapter is the **canonical curriculum**, not a suggestion. The agent must:
 
+- **Reveal the chapter progressively** — do not paste the whole chapter, full lesson outline, reflection, teach-back, and exercises into chat. Ask the current question, wait, calibrate, then move to the next slice.
 - **Follow the predict-pauses in order** — surface the same prior model, ask the same predict questions, hit the same compiler conversations, demonstrate the same artifact. Don't substitute "your favourite way to teach this" for what the chapter says.
 - **Use the chapter's pain anchors** — they were chosen for a reason (the project's anchor table + the learner profile). Don't substitute random analogies.
 - **Calibrate dynamically inside the script.** The learner's specific prediction is the data point; the chapter's `<details>` block is the *menu of common responses* you're calibrating against. If the learner predicts something the chapter didn't anticipate, address it AND log it in the teaching-notes file for future chapter revision.
@@ -250,7 +288,16 @@ If the chapter is wrong or missing something, **fix the chapter** (and its teach
 ## Anti-patterns
 
 - **Dialog transcripts.** Chapters are cleaned narrative, not literal dialog. Predict-pauses preserve interactivity without preserving the original conversation.
+  - **Bad:** "Then I asked you about ownership, and you said it would still be usable…" — reproducing the live session turn by turn.
+  - **Good:** "Many readers expect the value to still be usable here. It isn't — here's why," written for the population.
 - **Linking to private Obsidian notes.** The book is public; Obsidian is private. Cross-link only to other chapters and to the project's repo content.
 - **Skipping the predict-before-run pauses.** They're the core of the pedagogy. A chapter without `<details>`-wrapped predicts is a flat tutorial, not a teaching chapter.
-- **Stating the answer in the predict question itself.** "What does `Command::new` return — a `Command` builder?" is not a question. The question must be genuinely answerable wrong.
+- **Stating the answer in the predict question itself.** The question must be genuinely answerable wrong.
+  - **Bad:** "What does `Command::new` return — a `Command` builder?" (the answer is in the question)
+  - **Good:** "After `Command::new("ls")`, has the process started yet? What do you have in your hand?"
+- **Fake tensions.** Branches dressed up as trade-offs.
+  - **Bad:** "REST vs GraphQL" or "supervised vs self-supervised" presented as a deep tension.
+  - **Good:** the real trade-off underneath — "stable coarse-grained contracts vs client-shaped data access" — or say plainly the choice is contextual.
+- **Uncited confidence on external claims.** If the chapter leans on runtime, language, framework, or research facts outside the repo, cite the source of truth or mark the gap.
 - **Live-mode improv that abandons the chapter.** If the agent finds itself teaching things the chapter doesn't cover, *in the chapter's order*, the chapter has been abandoned — that's a regression to "teaching skill without book." Route surprises into teaching-notes instead.
+- **Live-mode chapter dumping.** If the agent pastes the whole lesson or all exercises before the learner has answered the first predict-pause, the chapter has stopped being interactive. Keep the long-form chapter in the file; keep the chat bite-sized.

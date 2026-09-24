@@ -1,11 +1,11 @@
-Vendored: 2026-05-05T00:00:00Z
+Vendored: 2026-05-25T20:21:18Z
 Mode: reproduce
 Target language: c
 Anchor repo: . (this repo, built from zero chapter by chapter)
-Previous vendored: 2026-05-04T12:30:00Z
+Previous vendored: 2026-05-05T00:00:00Z
 
 Source skill versions:
-  teaching:  version:1.0.0 (from /Users/bhekanik/.dotfiles/.skills/teaching) — includes rule 4 checkpoint-discipline addendum + "era it answers to" framing + walkthrough/build-and-learn modes
+  teaching:  version:1.3.0 (from /Users/bhekanik/.dotfiles/.skills/teaching)
   humanizer: snapshot (from /Users/bhekanik/.claude/skills/humanizer)
 
 To refresh: re-run bookgen/scripts/update.sh --book-repo <this-repo>

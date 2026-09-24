@@ -185,6 +185,59 @@ The terminal "teach" step is the asymptote. If the learner can teach the concept
 **Sources:**
 - [PMC: see one do one teach one in surgical training](https://pmc.ncbi.nlm.nih.gov/articles/PMC4785880/)
 
+## Expectation-Misconception Tailoring (EMT) — AutoTutor
+
+**Graesser et al., AutoTutor (2000s+).** Intelligent-tutoring lineage. For each question, the system pre-authors a set of **expectations** (what a complete answer must contain) and **anticipated misconceptions** (the false beliefs that fire here). Tutoring is then a loop: compare the learner's answer to the expectations, detect which expectation is missing or which misconception is active, and respond with **graduated hints** that escalate specificity only as needed.
+
+**How we apply it (rules 5–6, 21):**
+- Teaching-notes hold the expectation + misconception lists per concept (alongside the probe bank).
+- Hints fade in a ladder — L1 nudge, L2 structure, L3 near-spoiler — and drop a level only after a real attempt fails.
+- This keeps "withhold the solution" operational: give the smallest hint that closes the specific gap, not the answer.
+
+**Sources:**
+- Graesser et al. — [AutoTutor and expectation-misconception tailoring](https://www.tandfonline.com/doi/abs/10.1207/S15327809JLS1304_3)
+
+## Learner-state / knowledge tracing — inject history, not persona
+
+**Khan Academy AI-tutor deployment (2025–26); LearnLM ablations.** The highest-leverage move in real tutoring deployments is not tuning the teaching voice — it is **injecting learner state**: a running summary of recent history and the learner's *unmastered prerequisites*. Khan's A/B tests across millions of threads found recent-history context and unmastered-prerequisite context each moved next-item correctness measurably (combined roughly +6%), while persona/style tweaks and "more examples / more links" did little or nothing.
+
+**How we apply it (rule 22):**
+- Carry a four-field learner state (mastered / shaky / recent errors / priors), persisted in teaching-notes frontmatter and injected every turn.
+- Spend the context budget on state, not on ornamenting the voice.
+
+**Sources:**
+- Khan Academy — [Building a better AI tutor: our most recent learnings](https://blog.khanacademy.org/how-khan-academy-is-building-a-better-ai-tutor-our-most-recent-learnings/)
+- LearnLM — [Improving Gemini for Learning (arXiv:2412.16429)](https://arxiv.org/abs/2412.16429)
+
+## Pedagogical instruction-following — LearnLM
+
+**Google, LearnLM (arXiv:2412.16429).** Reframes tutoring quality as **pedagogical instruction-following** rather than a baked-in persona: a good tutor follows the pedagogy the situation calls for (don't-give-the-answer, manage cognitive load, foster active learning), and which pedagogy applies is *selectable*, not fixed.
+
+**How we apply it (rule 21):**
+- The three pressure modes (Socratic / Curious Guide / Devil's Advocate) are swappable instruction layers chosen for the learner's state, not a single "teach well" setting. Naming the mode and the shift is part of the method.
+- The "don't give away the answer" constraint is treated as a hard rule (rules 5–6), the way LearnLM treats it as a rubric constraint.
+
+## Recursive Prerequisite Knowledge Tracing (RPKT)
+
+**RPKT (arXiv:2508.11892).** When a learner fails, trace *down* the prerequisite graph to the boundary of what they actually know, then teach upward from the first solid floor — rather than re-explaining the failed concept in place.
+
+**How we apply it (rule 23):**
+- On a stall, walk down `requires:` / `teaches:` edges (the book's frontmatter plus the generated `concept-dag.json`) with fast binary checks until one passes, then climb.
+
+**Sources:**
+- [RPKT (arXiv:2508.11892)](https://arxiv.org/pdf/2508.11892)
+
+## Transfer of learning, and the engagement-is-not-learning caveat
+
+**Bransford & Schwartz 1999 (transfer); Bjork (desirable difficulties); 2025 LLM-tutoring studies (the caveat).** Concepts transfer only when practised across varied surfaces (rule 19). And a crucial warning from recent deployments: **learner satisfaction is not learning.** Several 2025 controlled studies found positive engagement/satisfaction alongside near-zero corrected learning gains.
+
+**How we apply it (rules 9, 19):**
+- Optimise for next-item transfer and unaided self-explanation, not for how good the session felt.
+- Exercises (far transfer) are the extrinsic measure; "the chapter felt clear" is not.
+
+**Sources:**
+- [Engagement does not equal learning (MDPI Education Sciences, 2025)](https://www.mdpi.com/2227-7102/15/11/1502)
+
 ## Synthesis — what to remember
 
 If you forget everything else:
@@ -196,3 +249,7 @@ If you forget everything else:
 5. **Productive struggle on conceptual stakes** — they type for the meaningful decisions
 6. **Compiler as co-teacher** (Klabnik) — don't pre-empt
 7. **Teach back at end** (See/Do/Teach) — articulation locks retention
+8. **Carry learner state, every turn** (rule 22; Khan/LearnLM) — recent history + unmastered prereqs beat any persona tweak
+9. **Withhold the answer; fade hints L1→L3** (rules 5–6, 21; AutoTutor EMT) — smallest hint that closes the gap
+10. **Descend to the solid floor on a stall** (rule 23; RPKT) — teach upward from what they know
+11. **Optimise for transfer, not satisfaction** (rules 9, 19; 2025 studies) — felt-clarity is not learning
