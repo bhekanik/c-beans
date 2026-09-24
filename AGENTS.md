@@ -56,6 +56,10 @@ When you introduce a C concept, check whether it fits a row. If it does, lead wi
 - Let the compiler and ASan be co-teachers. Don't pre-empt errors; read them together.
 - End each session with a teach-back, an Obsidian session note, and the public chapter at `docs/book/NN-*.md`.
 - After non-ceremony chapters, ship exercises (rule 19): sibling files at `docs/book/exercises/<NN>-<title>-exercises.md` + `…-answers.md`, 2–3 graded exercises (wield / stretch / synthesise / prose). Skip when the chapter is ceremony or the concept doesn't generalise enough to drill. The bar is reinforcement, not coverage.
+- Tag evidence posture (rule 20): every concept slice and notes entry carries one of `consensus | tension | pitfall | misunderstanding | gap`. A branch is not a tension. If a debate is settled, say so plainly.
+- Match pressure mode to learner state (rule 21): default Socratic; Curious Guide when the learner says lost, tired or overwhelmed; Devil's Advocate when they overstate confidence. Announce shifts when noticeable. Sharpen fuzzy language as it appears (process vs program, stdout vs terminal, type vs value). Track mastery as `Unknown → Confused → Aware → Confident`, not vibes. Use the L1 nudge → L2 structure → L3 near-spoiler hint ladder; start at L1 every time and drop a level only after a real attempt fails.
+- Carry learner state every turn (rule 22): at the start of each turn, load the four fields: mastered, shaky, recent errors, priors. The persisted snapshot lives in each chapter's teaching-notes frontmatter (`learner_state:`). Update the working copy from predictions, probe results and errors, and reconcile it back into the snapshot at session end. Spend context on this, not on persona ornamentation.
+- When the learner stalls, descend the prerequisite chain (rule 23): don't re-explain louder. Ask a fast binary check on the nearest prerequisite; if it's shaky, descend again. Climb back from the first solid floor. Use the generated map at [`docs/chain/concept-dag.json`](docs/chain/concept-dag.json) plus chapter `requires:` / `teaches:` frontmatter; don't guess the chain.
 
 The full pedagogy is the vendored `teaching` skill at [`.skills/teaching/`](.skills/teaching/). Read its `SKILL.md` and `references/operating-rules.md` before starting a session.
 
@@ -71,12 +75,13 @@ Sessions end when the learner says "I'm tired" (or equivalent), not before. Then
 4. Read the matching row in [`docs/teaching/sessions.md`](docs/teaching/sessions.md).
 5. Read the relevant milestone file under [`docs/implementation/`](docs/implementation/) (`00-workspace-setup.md` for Phase 0; `tasks/MNN-*.md` as they land).
 6. Read the matching chapter at `docs/book/NN-*.md`. It is the curriculum (rule 15 of the teaching skill).
-7. Read the companion teaching notes at `docs/teaching/notes/NN-*.md`: common wrong predictions and sticky points from prior teaches.
-8. Check the Obsidian hub `C-Beans Teaching Sessions.md` (vault root, via the `obsidian` skill). Read the most recent session note's "Open questions" and "Teach-back capture" sections.
-9. Greet the learner, recap the previous session in one sentence, and ask for the teach-back of the previous concept.
-10. Start today's session by surfacing the learner's prior model: "How do you think X works?"
+7. Read the companion teaching notes at `docs/teaching/notes/NN-*.md`. Its `learner_state:` frontmatter (rule 22) is the persisted snapshot of mastered / shaky / recent_errors / priors; load it as your starting working model. Below the frontmatter: common wrong predictions, the probe bank and sticky points from prior teaches.
+8. Skim [`docs/chain/concept-dag.json`](docs/chain/concept-dag.json) for this chapter's prerequisite edges (rule 23). If the learner stalls today, this is the map you walk down to a solid floor.
+9. Check the Obsidian hub `C-Beans Teaching Sessions.md` (vault root, via the `obsidian` skill). Read the most recent session note's "Open questions" and "Teach-back capture" sections.
+10. Greet the learner, recap the previous session in one sentence, and ask for the teach-back of the previous concept.
+11. Start today's session by surfacing the learner's prior model: "How do you think X works?"
 
-Don't write code or commit before step 10.
+Don't write code or commit before step 11.
 
 ### Note capture
 
@@ -91,7 +96,9 @@ If the learner says "let's go fast", "just ship it" or "skip teaching today", dr
 - `docs/blueprint/`: the full project vision. Read it to recenter when you've lost the thread of a decision. It is stable; don't edit it without an explicit conversation. New decisions go in as decision-log entries; reality drift is captured separately.
 - `docs/implementation/`: the ship-mode task list. It is intentionally free of teaching content so the project can be handed to a coding agent as-is.
 - `docs/teaching/`: the teaching session plan, only relevant in teaching mode. Slices each milestone into one-concept sessions.
-  - [`README.md`](docs/teaching/README.md), [`sessions.md`](docs/teaching/sessions.md) (per-milestone session breakdown), [`build-philosophy.md`](docs/teaching/build-philosophy.md) (reproduce-mode artifact contract), [`c-anchor-table.md`](docs/teaching/c-anchor-table.md), [`notes/`](docs/teaching/notes/) (companion notes per chapter).
+  - [`README.md`](docs/teaching/README.md), [`sessions.md`](docs/teaching/sessions.md) (per-milestone session breakdown), [`build-philosophy.md`](docs/teaching/build-philosophy.md) (reproduce-mode artifact contract), [`c-anchor-table.md`](docs/teaching/c-anchor-table.md), [`notes/`](docs/teaching/notes/) (companion notes per chapter, each with a `learner_state:` snapshot for rule 22).
+  - [`suggested-order.md`](docs/teaching/suggested-order.md) and [`dep-skeleton.json`](docs/teaching/dep-skeleton.json): bookgen-generated suggested teaching order and dependency skeleton. Refreshed by `bookgen/scripts/update.sh`; don't hand-edit.
+  - [`docs/chain/concept-dag.json`](docs/chain/concept-dag.json): generated prerequisite graph from chapter `requires:` / `teaches:` frontmatter. The map for rule-23 prerequisite descent.
   - [`docs/book/exercises/`](docs/book/exercises/): exercise sets per chapter (rule 19); not every chapter has them.
 - The teaching directory is the plan. Session logs live in Obsidian (`C-Beans Teaching Sessions.md` hub plus per-session notes). Plan and log don't replace each other.
 - [`TODO.md`](TODO.md) is an index with checkboxes pointing into `docs/implementation/`, not a task store.
